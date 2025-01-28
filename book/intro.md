@@ -1,5 +1,5 @@
 (intro)=
-# Welcome to the Template Book
+# Welcome to the Floating and Submerged Structures book
 
 _This is the first page the student will see when opening the url._
 
