@@ -4,14 +4,8 @@ root: contents/00_intro.md
 parts:
   - caption: Fundamentals
     chapters:
-      - file: contents/01_fundamentals/index.md
-        sections:
-          - file: contents/01_fundamentals/01_preliminaries/index.md
-          - file: contents/01_fundamentals/02_introduction/index.md
-            # sections:
-            #   - file: contents/01_fundamentals/02_introduction/03_text_and_code.ipynb
-            #   - file: contents/01_fundamentals/02_introduction/04_exercises.md
-            #   - file: contents/01_fundamentals/02_introduction/05_more_exercises.md
+        - file: contents/01_fundamentals/01_preliminaries/index.md
+        - file: contents/01_fundamentals/02_introduction/index.md
 
   - caption: Environmental Source Characterization
     chapters:
@@ -35,6 +29,5 @@ parts:
 
   - caption: Practical Information
     chapters:
-      - file: contents/07_practical_information/08_references.md
-      - file: contents/07_practical_information/09_changelog.md
-      - file: contents/07_practical_information/10_credits.md
+      - file: contents/07_practical_information/01_courseschedules/index.md
+      - file: contents/07_practical_information/02_examinfo/index.md
