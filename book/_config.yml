@@ -1,5 +1,5 @@
 Title: Floating & Submerged Substructres
-author: Author from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a> #add your own name here
+author: By O. Colomés, F. Lange, S. Agarwal and G. Oude Vrielink from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a> #add your own name here
 
 execute:
   execute_notebooks: "off"
@@ -7,7 +7,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://oit.tudelft.nl/" #Replace this with your own URL
+  baseurl :  "https://cmoe-tudelft.github.io/FloatingSubmergedStructures/" 
 
 sphinx:
   config:
@@ -20,7 +20,7 @@ sphinx:
     html_theme_options:
       logo:
         text: TU Delft GitHub OIT Template
-      repository_url: "https://github.com/TUDelft-books/repo" #add your own repo URL here
+      repository_url: "https://github.com/CMOE-TUDelft/FloatingSubmergedStructures"
       path_to_docs: "book"
       repository_branch: "main"
       use_edit_page_button: true
