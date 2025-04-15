@@ -1,33 +1,84 @@
 format: jb-book
-root: contents/00_intro.md
+root: contents/intro.md
 
 parts:
   - caption: Fundamentals
     chapters:
-        - file: contents/01_fundamentals/01_preliminaries/index.md
-        - file: contents/01_fundamentals/02_introduction/index.md
+      - file: contents/fundamentals/index.md
+      - file: contents/fundamentals/preliminaries/index.md
+      - file: contents/fundamentals/introduction/index.md
+  
+  - caption: Env Source Characterization
+    chapters:
+      - file: contents/env_source_characterization/index.md
+      - file: contents/env_source_characterization/currents/index.md
+      - file: contents/env_source_characterization/earthquake/index.md
+      - file: contents/env_source_characterization/intro/index.md
+      - file: contents/env_source_characterization/other/index.md
+      - file: contents/env_source_characterization/tides/index.md
+      - file: contents/env_source_characterization/waves/index.md
+      - file: contents/env_source_characterization/wind/index.md
+  
+  - caption: Hydro Loads
+    chapters:
+      - file: contents/hydro_loads/index.md
+      - file: contents/hydro_loads/accidental/index.md
+      - file: contents/hydro_loads/hydrodynamic/index.md
+      - file: contents/hydro_loads/hydrodynamic/current/index.md
+      - file: contents/hydro_loads/hydrodynamic/diffraction/index.md
+      - file: contents/hydro_loads/hydrodynamic/force_regime/index.md
+      - file: contents/hydro_loads/hydrodynamic/froude_krylov/index.md
+      - file: contents/hydro_loads/hydrodynamic/irregular_waves/index.md
+      - file: contents/hydro_loads/hydrodynamic/morison/index.md
+      - file: contents/hydro_loads/hydrostatic/index.md
+      - file: contents/hydro_loads/imposed_deform/index.md
+      - file: contents/hydro_loads/imposed_deform/creep/index.md
+      - file: contents/hydro_loads/imposed_deform/tension/index.md
+      - file: contents/hydro_loads/self_weight/index.md
 
-  - caption: Environmental Source Characterization
+  - caption: Design Principles
     chapters:
-      - file: contents/02_env_source_characterization/index.md
+      - file: contents/design_principles/index.md
+      - file: contents/design_principles/construction/index.md
+      - file: contents/design_principles/lca/index.md
+      - file: contents/design_principles/stability_global/index.md
+      - file: contents/design_principles/structural_config/index.md
 
-  - caption: Hydrostatic and Hydrodynamic Loads in FSS
-    chapters:
-      - file: contents/03_hydro_loads/index.md
 
-  - caption: Mooring Systems of FSS
+  - caption: Experimental Techniques
     chapters:
-      - file: contents/04_mooring_systems/01_mooring_design/01_introduction.md
-      - file: contents/04_mooring_systems/01_mooring_design/figures/figures.md
-  - caption: Experimental Techniques in FSS
-    chapters:
-      - file: contents/05_experimental_techniques/index.md
+      - file: contents/experimental_techniques/index.md
 
-  - caption: Modeling and Analysis of FSS
+
+
+  - caption: Modeling Analysis
     chapters:
-      - file: contents/06_modeling_analysis/index.md
+      - file: contents/modeling_analysis/index.md
+
+  - caption: Mooring Systems
+    chapters:
+      - file: contents/mooring_systems/index.md
+      - file: contents/mooring_systems/catenary/index.md
+      - file: contents/mooring_systems/catenary/multi_line/index.md
+      - file: contents/mooring_systems/catenary/multi_multi/index.md
+      - file: contents/mooring_systems/catenary/multi_segment_plus_components/index.md
+      - file: contents/mooring_systems/catenary/single_segment_line/index.md
+      - file: contents/mooring_systems/components/index.md
+      - file: contents/mooring_systems/components/anchors/index.md
+      - file: contents/mooring_systems/components/jewelry/index.md
+      - file: contents/mooring_systems/components/materials/index.md
+      - file: contents/mooring_systems/components/segment_type/index.md
+      - file: contents/mooring_systems/concepts/index.md
+      - file: contents/mooring_systems/installation/index.md
+      - file: contents/mooring_systems/lca/index.md
+      - file: contents/mooring_systems/mooring_design/index.md
+      - file: contents/mooring_systems/mooring_design/figures/index.md
+      - file: contents/mooring_systems/mooring_leads/index.md
+      - file: contents/mooring_systems/taut/index.md
+      - file: contents/mooring_systems/tlp/index.md
 
   - caption: Practical Information
     chapters:
-      - file: contents/07_practical_information/01_courseschedules/index.md
-      - file: contents/07_practical_information/02_examinfo/index.md
+      - file: contents/practical_information/index.md
+      - file: contents/practical_information/courseschedules/index.md
+      - file: contents/practical_information/examinfo/index.md

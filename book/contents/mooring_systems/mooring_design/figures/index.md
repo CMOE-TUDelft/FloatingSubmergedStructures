@@ -1,3 +1,3 @@
-# Env Source Characterization
+# Figures
 
 This section provides an overview of the topic.
