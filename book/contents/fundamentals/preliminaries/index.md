@@ -1,3 +1,3 @@
-# Env Source Characterization
+# Preliminaries
 
 This section provides an overview of the topic.

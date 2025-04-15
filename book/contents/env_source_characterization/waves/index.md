@@ -1,3 +1,3 @@
-# Env Source Characterization
+# Waves
 
 This section provides an overview of the topic.

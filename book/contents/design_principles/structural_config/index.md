@@ -1,3 +1,3 @@
-# Env Source Characterization
+# Structural Config
 
 This section provides an overview of the topic.
