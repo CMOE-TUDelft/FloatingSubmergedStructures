@@ -19,7 +19,7 @@ sphinx:
       exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb"]
     html_theme_options:
       logo:
-        text: TU Delft GitHub OIT Template
+        text: Floating and Submerged Structures
       repository_url: "https://github.com/CMOE-TUDelft/FloatingSubmergedStructures"
       path_to_docs: "book"
       repository_branch: "main"
