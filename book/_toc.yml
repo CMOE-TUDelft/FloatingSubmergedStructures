@@ -17,8 +17,8 @@ parts:
 
   - caption: Mooring Systems of FSS
     chapters:
-      - file: contents/04_mooring_systems/index.md
-
+      - file: contents/04_mooring_systems/01_mooring_design/01_introduction.md
+      - file: contents/04_mooring_systems/01_mooring_design/figures/figures.md
   - caption: Experimental Techniques in FSS
     chapters:
       - file: contents/05_experimental_techniques/index.md
