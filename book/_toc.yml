@@ -1,21 +1,33 @@
 format: jb-book
-root: intro.md
+root: contents/00_intro.md
 
 parts:
-  - caption: Contents
+  - caption: Fundamentals
     chapters:
-    - file: some_content/overview.md
-      sections:
-      - file: some_content/text_and_code.ipynb
-    - file: exercises
-      sections:
-      - file: exercises/001.md
-      - file: exercises/002.md
-      - file: exercises/003.md
-      - file: exercises/004.md
-      - file: exercises/005.md
-      - file: exercises/006.md
-      - file: exercises/summary
-    - file: references.md
-    - file: changelog.md
-    - file: credits.md
+        - file: contents/01_fundamentals/01_preliminaries/index.md
+        - file: contents/01_fundamentals/02_introduction/index.md
+
+  - caption: Environmental Source Characterization
+    chapters:
+      - file: contents/02_env_source_characterization/index.md
+
+  - caption: Hydrostatic and Hydrodynamic Loads in FSS
+    chapters:
+      - file: contents/03_hydro_loads/index.md
+
+  - caption: Mooring Systems of FSS
+    chapters:
+      - file: contents/04_mooring_systems/01_mooring_design/01_introduction.md
+      - file: contents/04_mooring_systems/01_mooring_design/figures/figures.md
+  - caption: Experimental Techniques in FSS
+    chapters:
+      - file: contents/05_experimental_techniques/index.md
+
+  - caption: Modeling and Analysis of FSS
+    chapters:
+      - file: contents/06_modeling_analysis/index.md
+
+  - caption: Practical Information
+    chapters:
+      - file: contents/07_practical_information/01_courseschedules/index.md
+      - file: contents/07_practical_information/02_examinfo/index.md
