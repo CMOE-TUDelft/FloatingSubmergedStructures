@@ -29,20 +29,6 @@ This online book is structured as a new Jupyter Book and is organized into the f
 
 This book builds on the rich tradition of computational mechanics education and research at the Faculty of Civil Engineering and Geosciences at TU Delft. We extend our gratitude to all who have contributed to and supported this ongoing endeavor in advancing the study of floating and submerged structures.
 
-## Planning
-
-| **Week (Lecture)** | **Hours** | **Main Topics / Activities**                                                                                                                                                                     |
-|--------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1 (17)**         | 12        | - **Concept design basis** (start) <br/>- **2D concept modelling** (start) <br/>- **EVA** (start) <br/>- Choose location & design basis                                                                 |
-| **2 (18)**         | 12        | - **Concept design basis** (cont.) <br/>- **Environmental analysis** (start) <br/>- **Mooring system design** (start) <br/>- 2D concept modelling (cont.) <br/>- EVA (cont.)                |
-| **3 (19)**         | 12        | - **Concept design modelling** (cont.) <br/>- **Concept development & selection** <br/>- **Feedback session** <br/>- Environmental analysis (cont.) <br/>- Mooring system design (cont.)   |
-| **4 (20)**         | 12        | - **Detailed structural numerical modelling** (start) <br/>- **Reliability analysis** (start) <br/>- Stakeholder debate                                                                               |
-| **5 (21)**         | 12        | - **Detailed structural numerical modelling** (cont.) <br/>- **Reliability analysis** (cont.) <br/>- **3D structural modelling** (start) <br/>- **Stress analysis** (start)                  |
-| **6 (22)**         | 12        | - **Detailed structural numerical modelling** (cont.) <br/>- **Structural dynamics** (start) <br/>- Stress analysis (cont.) <br/>- **Reporting & feedback** (start)                          |
-| **7 (23)**         | 12        | - Detailed structural numerical modelling (cont.) <br/>- Structural dynamics (cont.) <br/>- Stress analysis (cont.) <br/>- Reporting & feedback (cont.)                                       |
-| **8 (24)**         | 12        | - **Report issue** (start) <br/>- Reporting & feedback (cont.)                                                                                                                                    |
-| **9 (25)**         | 5         | - Report issue (cont.) <br/>- **Oral exam** <br/>- **Final exam**                                                                                                                                    |
-
 ## References
 
 The references for this book are available in the `references.bib` file. 
