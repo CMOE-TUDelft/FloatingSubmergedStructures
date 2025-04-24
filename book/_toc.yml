@@ -23,6 +23,7 @@ parts:
     chapters:
       - file: contents/loads/self_weight/index.md
       - file: contents/loads/hydrostatic/index.md
+      - file: contents/loads/hydrostatic/hydrostatic_1.ipynb
       - file: contents/loads/hydrodynamic/index.md
       - file: contents/loads/hydrodynamic/force_regime/index.md
       - file: contents/loads/hydrodynamic/froude_krylov/index.md
