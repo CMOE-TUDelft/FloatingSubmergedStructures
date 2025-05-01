@@ -4,14 +4,22 @@ defaults:
   numbered: 2
 
 parts:
-  - caption: Fundamentals
-    numbered: 1
+  - caption: Fundamentals    
+    numbered: 2
+    title:
     chapters:
       - file: contents/fundamentals/introduction/index.md
         title: Introduction
+        sections:
+        - file: contents/fundamentals/introduction/course_introduction.md
+          title: Course Introduction
+        - file: contents/fundamentals/introduction/society_needs.md
+          title: Society Needs
+        - file: contents/fundamentals/introduction/project_approach.md
+          title: Project Approach
       - file: contents/fundamentals/preliminaries/index.md
         title: Preliminaries
-  
+
   - caption: Environmental Source Characterization
     chapters:
       - file: contents/env_source_characterization/intro/index.md

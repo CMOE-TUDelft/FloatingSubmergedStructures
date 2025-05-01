@@ -1,0 +1,89 @@
+format: jb-book
+root: contents/intro.md
+
+  - caption: Advanced
+    chapters:
+      - file: contents/advanced/index.md
+      - file: contents/advanced/hydroelasticity/index.md
+      - file: contents/advanced/nonlinear_effects/index.md
+      - file: contents/advanced/vortex_induced_vibrations/index.md
+      - file: contents/advanced/wave_loads_2nd/index.md
+
+  - caption: Design Principles
+    chapters:
+      - file: contents/design_principles/index.md
+      - file: contents/design_principles/construction/index.md
+      - file: contents/design_principles/lca/index.md
+      - file: contents/design_principles/stability_global/index.md
+      - file: contents/design_principles/structural_config/index.md
+
+  - caption: Env Source Characterization
+    chapters:
+      - file: contents/env_source_characterization/index.md
+      - file: contents/env_source_characterization/currents/index.md
+      - file: contents/env_source_characterization/earthquake/index.md
+      - file: contents/env_source_characterization/intro/index.md
+      - file: contents/env_source_characterization/other/index.md
+      - file: contents/env_source_characterization/tides/index.md
+      - file: contents/env_source_characterization/waves/index.md
+      - file: contents/env_source_characterization/wind/index.md
+
+  - caption: Experimental Techniques
+    chapters:
+      - file: contents/experimental_techniques/index.md
+
+  - caption: Fundamentals
+    chapters:
+      - file: contents/fundamentals/index.md
+      - file: contents/fundamentals/introduction/index.md
+      - file: contents/fundamentals/preliminaries/index.md
+
+  - caption: Loads
+    chapters:
+      - file: contents/loads/index.md
+      - file: contents/loads/accidental/index.md
+      - file: contents/loads/hydrodynamic/index.md
+      - file: contents/loads/hydrodynamic/current/index.md
+      - file: contents/loads/hydrodynamic/diffraction/index.md
+      - file: contents/loads/hydrodynamic/force_regime/index.md
+      - file: contents/loads/hydrodynamic/froude_krylov/index.md
+      - file: contents/loads/hydrodynamic/irregular_waves/index.md
+      - file: contents/loads/hydrodynamic/morison/index.md
+      - file: contents/loads/hydrostatic/index.md
+      - file: contents/loads/imposed_deform/index.md
+      - file: contents/loads/imposed_deform/creep/index.md
+      - file: contents/loads/imposed_deform/tension/index.md
+      - file: contents/loads/self_weight/index.md
+
+
+  - caption: Mooring Systems
+    chapters:
+      - file: contents/mooring_systems/index.md
+      - file: contents/mooring_systems/catenary/index.md
+      - file: contents/mooring_systems/catenary/multi_line/index.md
+      - file: contents/mooring_systems/catenary/multi_multi/index.md
+      - file: contents/mooring_systems/catenary/multi_segment_plus_components/index.md
+      - file: contents/mooring_systems/catenary/single_segment_line/index.md
+      - file: contents/mooring_systems/components/index.md
+      - file: contents/mooring_systems/components/anchors/index.md
+      - file: contents/mooring_systems/components/jewelry/index.md
+      - file: contents/mooring_systems/components/materials/index.md
+      - file: contents/mooring_systems/components/segment_type/index.md
+      - file: contents/mooring_systems/concepts/index.md
+      - file: contents/mooring_systems/installation/index.md
+      - file: contents/mooring_systems/lca/index.md
+      - file: contents/mooring_systems/mooring_design/index.md
+      - file: contents/mooring_systems/mooring_design/figures/index.md
+      - file: contents/mooring_systems/mooring_leads/index.md
+      - file: contents/mooring_systems/taut/index.md
+      - file: contents/mooring_systems/tlp/index.md
+
+  - caption: Practical Information
+    chapters:
+      - file: contents/practical_information/index.md
+      - file: contents/practical_information/courseschedules/index.md
+      - file: contents/practical_information/examinfo/index.md
+
+  - caption: Stakeholders
+    chapters:
+      - file: contents/stakeholders/index.md

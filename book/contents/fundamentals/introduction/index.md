@@ -1,3 +1,3 @@
-# Introduction
+# Introduction to the Floating and Submerged Structures Course
 
-This section provides an overview of the topic.
+The current book explaines the expectations of this course and gives motivation behind the need for floating and submerged structures.
