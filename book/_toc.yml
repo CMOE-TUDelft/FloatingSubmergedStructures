@@ -137,15 +137,21 @@ parts:
   - caption: Modeling and Analysis of FSS
     chapters:
       - file: contents/modeling_analysis/conceptual_design/index.md
-      - file: contents/modeling_analysis/quasi_static_analysis/index.md
-      - file: contents/modeling_analysis/FEM_introduction/index.md
+        title: Conceptual design
+        sections:
+        - file: contents/modeling_analysis/conceptual_desing/quasi_static_analysis.md
+          title: Quasi-static analysis
       - file: contents/modeling_analysis/dynamic_analysis/index.md
-      - file: contents/modeling_analysis/dynamic_analysis/modal_analysis/index.md
-      - file: contents/modeling_analysis/dynamic_analysis/ROM/index.md
+        title: Dynamic analysis
+        sections:
+        - file: contents/modeling_analysis/dynamic_analysis/introduction_to_FEM.md
+        - file: contents/modeling_analysis/dynamic_analysis/modal_analysis/index.md
+        - file: contents/modeling_analysis/dynamic_analysis/ROM/index.md
       - file: contents/modeling_analysis/post_processing/index.md
-      - file: contents/modeling_analysis/post_processing/internal_forces/index.md
-      - file: contents/modeling_analysis/post_processing/stresses/index.md
-      - file: contents/modeling_analysis/post_processing/limit_states/index.md
+        sections:
+        - file: contents/modeling_analysis/post_processing/internal_forces/index.md
+        - file: contents/modeling_analysis/post_processing/stresses/index.md
+        - file: contents/modeling_analysis/post_processing/limit_states/index.md
 
   - caption: Experimental Techniques
     chapters:
@@ -155,7 +161,7 @@ parts:
     chapters:
       - file: contents/stakeholders/index.md
 
-  - caption: Advanced
+  - caption: Advanced topics
     chapters:
       - file: contents/advanced/hydroelasticity/index.md
       - file: contents/advanced/nonlinear_effects/index.md
