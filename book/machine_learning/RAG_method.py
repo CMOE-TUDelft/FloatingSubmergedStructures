@@ -1,6 +1,6 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.llms import Ollama
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_ollama import OllamaLLM
 from langchain.chains import RetrievalQA
 import gradio as gr
 
@@ -11,7 +11,7 @@ embedding_model = HuggingFaceEmbeddings(model_name=model_name)
 
 vectorstore = FAISS.load_local("vectorstore_jupyterbook", embeddings=embedding_model, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever()
-llm = Ollama(model="phi3") # Use the Ollama model you downloaded
+llm = OllamaLLM(model="phi3")  # Use the Ollama model you downloaded
 qa = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
 
 # # Test which chunks are retrieved for a given query
