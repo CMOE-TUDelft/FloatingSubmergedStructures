@@ -61,4 +61,6 @@ This book builds on the rich tradition of computational mechanics education and 
 
 ## References
 
-The references for this book are available in the `references.bib` file. 
+The references for this book are available in the `references.bib` file.
+
+<iframe src="https://90bb4128bd67620220.gradio.live" width="100%" height="600px" frameborder="0"></iframe>
