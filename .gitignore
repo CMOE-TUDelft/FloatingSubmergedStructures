@@ -136,4 +136,4 @@ _build/
 # poetry files
 pyproject.toml
 /book/.gradio/
-/book/vectorstore_jupyterbook/
+/book/machine_learning/vectorstore_jupyterbook/

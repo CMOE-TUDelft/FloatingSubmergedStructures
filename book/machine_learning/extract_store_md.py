@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from langchain.text_splitter import MarkdownHeaderTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
@@ -21,8 +22,10 @@ def extract_text_from_markdown(book_dir):
     return texts
 
 # Example usage
-markdown_texts = extract_text_from_markdown("C:/Users/casper/OneDrive/Documenten/Persoonlijk/Notebookllm/Notebook/FloatingSubmergedStructures/book")
-# print(markdown_texts[0])  # Print extracted markdown file
+markdown_dir = Path(__file__).parent.parent
+markdown_texts = extract_text_from_markdown(str(markdown_dir.as_posix()))
+#print(markdown_texts[0])  # Print extracted markdown file
+
 
 
 # Split the markdown (.md) text into chunks.

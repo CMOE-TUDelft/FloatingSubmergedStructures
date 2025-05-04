@@ -21,5 +21,5 @@ def extract_text_from_html(book_dir):
 
 
 # Example usage:
-jupyter_book_texts = extract_text_from_html("C:/Users/casper/OneDrive/Documenten/Persoonlijk/Notebookllm/Notebook/FloatingSubmergedStructures/book/_build/html")
+jupyter_book_texts = extract_text_from_html("/FloatingSubmergedStructures/book/_build/html")
 print(jupyter_book_texts[1])
