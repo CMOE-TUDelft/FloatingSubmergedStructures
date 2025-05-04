@@ -1,8 +1,9 @@
 import os
+import re
 from pathlib import Path
 from langchain.text_splitter import MarkdownHeaderTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 
 
 def extract_text_from_markdown(book_dir):
@@ -17,6 +18,7 @@ def extract_text_from_markdown(book_dir):
                     lines = [line.strip() for line in f.readlines()]
                     # Remove empty lines and join
                     clean_text = "\n".join(line for line in lines if line)
+                    clean_text = re.sub(r"<[^>]+>", "", clean_text)  # strip HTML tags
                     texts.append(clean_text)
 
     return texts
@@ -24,7 +26,7 @@ def extract_text_from_markdown(book_dir):
 # Example usage
 markdown_dir = Path(__file__).parent.parent
 markdown_texts = extract_text_from_markdown(str(markdown_dir.as_posix()))
-#print(markdown_texts[0])  # Print extracted markdown file
+print(markdown_texts[0])  # Print extracted markdown file
 
 
 
