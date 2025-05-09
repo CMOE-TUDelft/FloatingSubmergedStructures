@@ -137,3 +137,7 @@ _build/
 pyproject.toml
 /book/.gradio/
 /book/machine_learning/vectorstore_jupyterbook/
+/book/machine_learning/data/
+/book/machine_learning/.gradio/
+/book/machine_learning/phi3-academic/
+/book/machine_learning/merged_model/

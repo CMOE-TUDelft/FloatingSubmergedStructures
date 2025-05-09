@@ -4,6 +4,7 @@ from pathlib import Path
 from langchain.text_splitter import MarkdownHeaderTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+import numpy as np
 
 
 def extract_text_from_markdown(book_dir):
@@ -19,6 +20,7 @@ def extract_text_from_markdown(book_dir):
                     # Remove empty lines and join
                     clean_text = "\n".join(line for line in lines if line)
                     clean_text = re.sub(r"<[^>]+>", "", clean_text)  # strip HTML tags
+                    clean_text = re.sub(r"```.*?```", "", clean_text, flags=re.DOTALL)
                     texts.append(clean_text)
 
     return texts
@@ -26,7 +28,9 @@ def extract_text_from_markdown(book_dir):
 # Example usage
 markdown_dir = Path(__file__).parent.parent
 markdown_texts = extract_text_from_markdown(str(markdown_dir.as_posix()))
-print(markdown_texts[0])  # Print extracted markdown file
+np.savez_compressed('data/text.npz', a=markdown_texts)
+print(markdown_texts)  # Print extracted markdown file
+
 
 
 
