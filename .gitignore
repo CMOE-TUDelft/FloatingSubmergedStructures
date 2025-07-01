@@ -141,3 +141,5 @@ pyproject.toml
 /book/machine_learning/.gradio/
 /book/machine_learning/phi3-academic/
 /book/machine_learning/merged_model/
+/book/machine_learning/rag-frontend/
+/book/machine_learning/output.csv
