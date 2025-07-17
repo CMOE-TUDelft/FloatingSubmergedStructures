@@ -1,0 +1,9 @@
+Django
+langchain
+langchain_core
+langchain_huggingface
+faiss-cpu
+langchain_community
+langchain_ollama
+djangorestframework
+django-cors-headers
