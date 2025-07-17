@@ -12,7 +12,7 @@ model_name = "MBZUAI/MobiLlama-05B"
 config = AutoConfig.from_pretrained(model_name)
 
 # Load the model using the correct configuration
-model = AutoModelForCausalLM.from_pretrained(model_name, device_map="cpu", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 lora_config = LoraConfig(

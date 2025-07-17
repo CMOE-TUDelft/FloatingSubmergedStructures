@@ -11,10 +11,10 @@ embedding_model = HuggingFaceEmbeddings(
     model_name="intfloat/e5-base",
     encode_kwargs={"normalize_embeddings": True}
 )
-vectorstore_loc = Path(__file__).parent.parent.parent / "vectorstore_jupyterbook"
+vectorstore_loc = Path(__file__).parent.parent / "vectorstore_jupyterbook"
 vectorstore = FAISS.load_local(vectorstore_loc, embeddings=embedding_model, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever()
-llm = OllamaLLM(model="phi3")
+llm = OllamaLLM(model="phi", base_url="http://ollama:11434")
 final_prompt = PromptTemplate(
     input_variables=["context", "query"],
     template="""

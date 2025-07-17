@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    environment:
+      - DEBUG=True
+      - DJANGO_ALLOWED_HOSTS=*
+      - OLLAMA_BASE_URL=http://ollama:11434
+    networks:
+      - app-network
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+
+  frontend:
+    build: ./rag-frontend
+    container_name: frontend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    environment:
+      - BACKEND_URL=http://backend:8000
+  ollama:
+    image: ollama/ollama:latest # Or your own built image
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - app-network
+    volumes:
+      - ollama_data:/root/.ollama # Optional: persist model data
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  ollama_data:

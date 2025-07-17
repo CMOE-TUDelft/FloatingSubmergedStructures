@@ -44,6 +44,17 @@ Answer:
 """
 )
 
+query_prompt = PromptTemplate(
+    input_variables=["query"],
+    template="""
+Question:
+{query}
+
+Answer:
+"""
+)
+
+
 # Helper to extract content from docs
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
