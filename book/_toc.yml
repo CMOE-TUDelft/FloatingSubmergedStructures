@@ -146,8 +146,18 @@ parts:
         - file: contents/modeling_analysis/post_processing/limit_states/index.md
 
   - caption: Experimental Techniques
+    numbered: 2
     chapters:
       - file: contents/experimental_techniques/index.md
+      - file: contents/experimental_techniques/mooring_experiment.md
+        title: Mooring Experiment
+        sections:
+        - file: contents/experimental_techniques/mooring_experiment_guidelines.md
+          title: Experiment Guidelines
+        - file: contents/experimental_techniques/Mp3_software_guidelines.md
+          title: Mp3 Software Guideline
+        - file: contents/experimental_techniques/Moorpy_example.md
+          title: Moorpy example
 
   - caption: Stakeholders
     chapters:
