@@ -17,7 +17,7 @@ Step 1: click right on the channel you want to calibrate and choose 'set zero'
 
 <img width="309" height="254" alt="image" src="https://github.com/user-attachments/assets/fc73c200-3b41-4b8b-92cf-f16714258193" />
 
-Step 2: click tools and then calibrate
+Step 2: click 'tools' and then 'calibrate'
 
 <img width="945" height="308" alt="image" src="https://github.com/user-attachments/assets/49d8011b-79fe-4096-87d5-c47cfb33d56a" />
 
@@ -25,7 +25,7 @@ Step 3: choose your channel
 
 <img width="856" height="881" alt="image" src="https://github.com/user-attachments/assets/643eccc7-0acc-43c8-8342-c9179bcb2835" />
 
-Step 4: add a calibration point to this channel, here an example of a weight of 1 N is used
+Step 4: add a calibration point to this channel, here an example of a weight of 1 N is used, click 'add point'
 
 <img width="855" height="867" alt="image" src="https://github.com/user-attachments/assets/688eaf87-a1db-4905-b34e-acf9a31256a5" />  
 
