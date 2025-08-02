@@ -59,6 +59,8 @@ Before starting the experiment:
 - **Load Cells**:
   - Zero the readings with no load applied.
   - Use known weights to verify linearity and calibration curve.
+  - See also chapter 'Mp3 Guidelines'.
+   
 - **Data Acquisition System**:
   - Check sensor connection and correct signal channel mapping.
     - Port D(1-4): red cable
@@ -68,7 +70,12 @@ Before starting the experiment:
     - yellow cable not connected
   - Set appropriate sampling rate (suggested: 10–50 Hz).
 
-Record calibration data and store it for validation.
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/3451c019-d1a9-4324-bfb5-a626f43c3e27" />
+
+
+Make a calibration set up (see picture below), record calibration data and store it for validation.
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/ab0c9abb-1a5d-4b7a-8c90-7460111b320c" />
 
 ---
 
@@ -89,7 +96,11 @@ Record calibration data and store it for validation.
 4. Attach displacement sensors to measure platform offset or mooring elongation.
 5. Verify all mechanical connections and safety clamps.
 
-Sketch the setup and label all components. Measure and note the geometry of the mooring lines (length, pretension, angle).
+Sketch the setup and label all components. Measure and note the geometry of the mooring lines (length, pretension, angle). The set up should look like the pictures below. 
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/90afbecb-0f72-4d4f-a9f1-fff07d3b65e1" />
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/60df1c9d-ab48-47d4-9a5e-e5578ed90c73" />
 
 ---
 
@@ -98,6 +109,11 @@ Sketch the setup and label all components. Measure and note the geometry of the 
 ### Test Types
 - **Quasi-static pull test**: Add weights to the pulling line incrementally (e.g., ±5-10 g) and hold position until system reaches steady state (~ 10-20 seconds at each step).
 - **Free oscillation test (optional)**: Displace and release the platform, observe restoring motion and damping.
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/e093a8fd-cc89-454f-8581-6018968e815e" />
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/44db4678-8eb3-4f34-a870-a025cc031731" />
+
 
 ### Data to Record
 - Displacement of platform in the direction of the pulling line
