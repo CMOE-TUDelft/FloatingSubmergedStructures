@@ -13,8 +13,8 @@ Check the number the green box you are using. In this case, we use box 11.
 
 Then, add a page by right-clicking. You will see your page appear in the bottom right corner. 
 
-<img width="176" height="100" alt="image" src="https://github.com/user-attachments/assets/7b01ddbe-6ac2-4b56-88f7-515e756bbf96" />
-<img width="277" height="100" alt="image" src="https://github.com/user-attachments/assets/ced15f0a-c117-4a0a-9768-dd084f50020a" />
+<img width="182" height="103" alt="image" src="https://github.com/user-attachments/assets/7b01ddbe-6ac2-4b56-88f7-515e756bbf96" />
+<img width="310" height="103" alt="image" src="https://github.com/user-attachments/assets/ced15f0a-c117-4a0a-9768-dd084f50020a" />
 
 Step 2: In your script (open in Finder), check if the number of the green box corresponds to the number the script is loading, in this case it is 11. Also, check the number of the page. 
 
@@ -44,7 +44,7 @@ Step 4: Click and drag your mouse to create a toolbar. You will see the followin
 
 Add to the Num View the channels you want to monitor for forcing. Righ-click and select 'Properties'. Then choose the channels you want to display. In this case, we select channels 000 to 003. Choose ‘Filtered’ and click ‘Ok’.  
 
-<img width="300" height="224" alt="image" src="https://github.com/user-attachments/assets/fd6d3267-f646-453d-9161-92b4a3165986" />
+<img width="500" height="373" alt="image" src="https://github.com/user-attachments/assets/fd6d3267-f646-453d-9161-92b4a3165986" />
 
 Step 5: Drag your mouse again and add a 'Graph View'. Right-click and select 'Properties. Here you can adjust the X and Y scales and select which channels to display in your graph. 
 
