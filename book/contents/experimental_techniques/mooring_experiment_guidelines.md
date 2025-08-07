@@ -46,7 +46,7 @@ You do **not** need to bring your own equipment unless instructed. Notify staff 
 Before the lab session, install the following software on your laptop:
 
 - **DAQ Control & Plotting Interface**
-  - Mp3 software (provided by the instructors). Note that this software only works with Windows operating systems. See [Mp3_software_guidelines.md] for instructions on how Mp3 works.
+  - Mp3 software (provided by the instructors). Note that this software only works with Windows operating systems. See [Mp3_software_guidelines.md](https://github.com/CMOE-TUDelft/FloatingSubmergedStructures/blob/mooring_experiment/book/contents/experimental_techniques/Mp3_software_guidelines.md) for instructions on how Mp3 works.
   - *A python script could be made available to replace the graphic interface from Mp3*.
 - **Python 3.x** with:
   - `numpy`, `matplotlib`, `pandas`, `scipy`
@@ -60,7 +60,7 @@ Before starting the experiment:
 - **Load Cells**:
   - Zero the readings with no load applied.
   - Use known weights to verify linearity and calibration curve.
-  - See also chapter 'Mp3 Guidelines'.
+  - See also chapter [Mp3_software_guidelines.md](https://github.com/CMOE-TUDelft/FloatingSubmergedStructures/blob/mooring_experiment/book/contents/experimental_techniques/Mp3_software_guidelines.md).
    
 - **Data Acquisition System**:
   - Check sensor connection and correct signal channel mapping.
