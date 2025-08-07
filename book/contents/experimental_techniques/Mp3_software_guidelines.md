@@ -40,10 +40,21 @@ Then click the 'Channels' tab in the setup dialog and right-click a channel. Her
 
 Step 4: Click and drag your mouse to create a toolbar. You will see the following options appear. Create a 'Num View' and click on 'A Largelist Type'. 
 
-<img width="300" height="391" alt="image" src="https://github.com/user-attachments/assets/d8c97322-1e58-48c8-823f-21870037e112" />
+<img width="200" height="261" alt="image" src="https://github.com/user-attachments/assets/d8c97322-1e58-48c8-823f-21870037e112" />
 
-Add to the Num View the channels you want to monitor for forcing. Righ-click and select 'Properties'. Then choose the channels you want to display. In this case, we select channels 000 to 003. 
+Add to the Num View the channels you want to monitor for forcing. Righ-click and select 'Properties'. Then choose the channels you want to display. In this case, we select channels 000 to 003. Choose ‘Filtered’ and click ‘Ok’.  
 
+<img width="300" height="224" alt="image" src="https://github.com/user-attachments/assets/fd6d3267-f646-453d-9161-92b4a3165986" />
+
+Step 5: Drag your mouse again and add a 'Graph View'. Right-click and select 'Properties. Here you can adjust the X and Y scales and select which channels to display in your graph. 
+
+<img width="500" height="394" alt="image" src="https://github.com/user-attachments/assets/91970c3a-3782-472c-b896-9fd2574b1166" />
+
+_Under the tab 'Scope Overall Settings', you can select 'Use Time Format' and 'Time Absolute'. This displays the current time on your graph. It can be helpful if you want to record the forcing from multiple sensors separtely, as it allows you to easily compare the forcing at specific times._
+
+Step 6: If you safe your configuration, you won't need to repeat all these steps next time. 
+
+<img width="500" height="259" alt="image" src="https://github.com/user-attachments/assets/72c82577-3d2a-4b1c-9672-5844dcf067d5" />
 
 
 ## How to use Mp3
