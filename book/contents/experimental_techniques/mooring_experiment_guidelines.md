@@ -37,6 +37,18 @@ The following materials will be available at your lab station:
 - Data acquisition interface (e.g., NI DAQ or Arduino-based)
 - Power supplies and USB interface cables
 
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/a6b9b26c-b833-499d-b426-fdb753da6697" />
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/dba6f8b6-a0ad-4d29-bcac-217ea2697368" />
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/8fccbbfe-c5a0-44cd-b10e-c348bdf208e3" />
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/a71ab50d-60e8-4eaa-8e29-3e09ec609bd0" />
+
+\
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/6d691e86-86bc-4860-80ba-d7974f556440" />
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/c5fdab39-972d-4663-b412-d6df027db1b2" />
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/b527fd99-83cc-4a8f-8911-409c336dfec4" />
+<img width="150" height="200" alt="image" src="https://github.com/user-attachments/assets/afd22c14-72d0-4bde-92fe-c478ffd0b602" />
+
+
 You do **not** need to bring your own equipment unless instructed. Notify staff immediately if any component is missing or defective.
 
 ---
@@ -63,7 +75,7 @@ Before starting the experiment:
   - See also chapter [Mp3_software_guidelines.md](https://github.com/CMOE-TUDelft/FloatingSubmergedStructures/blob/mooring_experiment/book/contents/experimental_techniques/Mp3_software_guidelines.md).
    
 - **Data Acquisition System**:
-  - Check sensor connection and correct signal channel mapping.
+  - Check sensor connection and correct signal channel mapping. Connect the sensors to the green box as follows:
     - Port D(1-4): red cable
     - Port E(1-4): green cable
     - Port F(1-4): white cable
@@ -74,6 +86,7 @@ Before starting the experiment:
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/3451c019-d1a9-4324-bfb5-a626f43c3e27" />
 
 
+\
 Make a calibration set up (see picture below), record calibration data and store it for validation.
 
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/ab0c9abb-1a5d-4b7a-8c90-7460111b320c" />
@@ -84,18 +97,19 @@ Make a calibration set up (see picture below), record calibration data and store
 
 ### Equipment
 - Small-scale floating platform model
-- Synthetic mooring lines (e.g., nylon)
+- Synthetic mooring lines (e.g., chain)
+- Synthetic tension legs (e.g., nylon)
 - Anchoring system
-- Load cells and displacement sensors
-- Rigid frame or pulley system (for horizontal pulling tests)
+- Load cells (and displacement sensors)
+- Rigid frame or pulley system (for horizontal pulling tests) with a ruler to measure the distance and a sensor to measure the force
 
 ### Setup Steps
 1. Before connecting all the components, measure their weight (dry and wet) and lengths.
-1. Connect the mooring lines to the platform.
-2. Fix the anchors at known positions.
-3. Connect load cells in-line with the mooring lines.
-4. Attach displacement sensors to measure platform offset or mooring elongation.
-5. Verify all mechanical connections and safety clamps.
+2. Connect the mooring lines to the platform.
+3. Fix the anchors at known positions.
+4. Connect load cells in-line with the mooring lines.
+5. Attach displacement sensors to measure platform offset or mooring elongation.
+6. Verify all mechanical connections and safety clamps.
 
 Sketch the setup and label all components. Measure and note the geometry of the mooring lines (length, pretension, angle). The set up should look like the pictures below. 
 
