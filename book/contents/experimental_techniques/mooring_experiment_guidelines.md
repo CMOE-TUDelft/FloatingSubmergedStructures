@@ -8,18 +8,18 @@ The goal of this experiment is to characterize the stiffness of a mooring system
 
 ## Safety Guidelines
 
-- **Lab Access**: The experiment will be located at the *blue floor* at the Stevin Lab (Civil Engineering and Geosciences faculty, TU Delft). This location is for public access, but this is still a laboratory and special attention has to be taken to prevent accidents. Please, be careful with other setups that might be in the same location or ongoing work in the surroundings.
+- **Lab Access**: The experiment will be located at the *blue floor* at the Stevin Lab 2 (Civil Engineering and Geosciences faculty, TU Delft). This location is for public access, but this is still a laboratory and special attention has to be taken to prevent accidents. Please, be careful with other setups that might be in the same location or ongoing work in the surroundings.
 - **PPE (Personal Protective Equipment)**:
   - No safety shoes or lab coats are required. Please, wear confortable clothing.
   - You will work with a water tank and might to get your hands wet. Bring a small towel with you to keep things dry.
-- **Electrical and Water Hazards**: Be cautious around electrical systems and water tanks. Keep instruments dry unless designed for submersion.
+- **Electrical and Water Hazards**: Be cautious around electrical systems and water tank. Keep instruments dry unless designed for submersion.
 - **Mechanical Hazards**:
   - The loads on the structure are very small, no hazards on the experiment itself.
   - Be carful with tripping on the safety tank surrounding the water tank.
 - **Emergency Procedures**: Before starting with the experiment, familiarize yourself with:
-  - Location of emergency stop buttons
-  - Nearest fire extinguisher
-  - Emergency exits
+  - Location of emergency stop buttons.
+  - Nearest fire extinguisher.
+  - Emergency exits.
 
 ---
 
@@ -32,6 +32,7 @@ The following materials will be available at your lab station:
 - Steel chain lines 
 - Anchoring system (fixed points in the tank)
 - Load cells
+- Displacement system (including weights)
 - Rulers, clamps, pulleys
 - Data acquisition interface (e.g., NI DAQ or Arduino-based)
 - Power supplies and USB interface cables
@@ -45,7 +46,7 @@ You do **not** need to bring your own equipment unless instructed. Notify staff 
 Before the lab session, install the following software on your laptop:
 
 - **DAQ Control & Plotting Interface**
-  - Mp3 software (provided by the instructors). Note that this software only works with Windows operating systems.
+  - Mp3 software (provided by the instructors). Note that this software only works with Windows operating systems. See [Mp3_software_guidelines.md] for instructions on how Mp3 works.
   - *A python script could be made available to replace the graphic interface from Mp3*.
 - **Python 3.x** with:
   - `numpy`, `matplotlib`, `pandas`, `scipy`
