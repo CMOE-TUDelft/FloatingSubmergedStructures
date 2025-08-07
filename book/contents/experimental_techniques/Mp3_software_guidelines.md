@@ -78,7 +78,8 @@ Step 3: Choose your channel.
 
 <img width="500" height="515" alt="image" src="https://github.com/user-attachments/assets/643eccc7-0acc-43c8-8342-c9179bcb2835" />
 
-Step 4: Add a calibration point to this channel, here an example of a weight of 1 N is used, click 'Add Point'.
+Step 4: Add a calibration point to this channel, here an example of a weight of 1 N is used, click 'Add Point'.\
+_If you use for example a weight of 50g for the first calibration, note that you need to change the units to Newtons (F = m * g)_
 
 <img width="500" height="507" alt="image" src="https://github.com/user-attachments/assets/688eaf87-a1db-4905-b34e-acf9a31256a5" />  
 
