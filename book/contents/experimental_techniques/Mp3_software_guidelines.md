@@ -66,28 +66,62 @@ If everything is sep up on your computer, you only need to use the table shown i
 ## How to calibrate the sensors with Mp3
 To calibrate the sensors, follow these steps. At least three reference points are used to obtain a reliable calibration. 
 
-Step 1: click right on the channel you want to calibrate and choose 'set zero'
+Step 1: Right-click on the channel you want to calibrate and choose 'Set Zero'.
 
 <img width="300" height="246" alt="image" src="https://github.com/user-attachments/assets/fc73c200-3b41-4b8b-92cf-f16714258193" />
 
-Step 2: click 'tools' and then 'calibrate'
+Step 2: Click 'Tools' and then 'Calibrate'.
 
 <img width="500" height="162" alt="image" src="https://github.com/user-attachments/assets/49d8011b-79fe-4096-87d5-c47cfb33d56a" />
 
-Step 3: choose your channel
+Step 3: Choose your channel.
 
 <img width="500" height="515" alt="image" src="https://github.com/user-attachments/assets/643eccc7-0acc-43c8-8342-c9179bcb2835" />
 
-Step 4: add a calibration point to this channel, here an example of a weight of 1 N is used, click 'add point'
+Step 4: Add a calibration point to this channel, here an example of a weight of 1 N is used, click 'Add Point'.
 
 <img width="500" height="507" alt="image" src="https://github.com/user-attachments/assets/688eaf87-a1db-4905-b34e-acf9a31256a5" />  
 
-Step 5: if you have added your 3 reference points, click 'set channel'. The following note will appear
+Step 5: If you have added your 3 reference points, click 'Set Channel'. The following note will appear.
 
 <img width="500" height="512" alt="image" src="https://github.com/user-attachments/assets/4fbac58b-4ca6-4cf3-862b-6ccb71b17839" />  
 
+Click 'Ok'and then click 'Ready'. Repeat this process for all the sensors you plan to use. If you safe your configuration, Mp3 will remember the calibration factors, so the next time you work with the experiment, you won't need to calibrate again. 
 
-Click 'ok'and then click 'ready'. Repeat this process for all the sensors you plan to use. If you safe your configuration, Mp3 will remember the calibration factors, so the next time you work with the experiment, you won't need to calibrate again. 
+## How to record with Mp3
+If you want to record the forcing  from each sensor, follow the steps below. 
+
+Step 1: Set your channels to zero. 
+
+<img width="300" height="194" alt="image" src="https://github.com/user-attachments/assets/8e6166c2-5f2a-48c4-9b88-4085a481c734" />
+
+Step 2: Click 'Start New'.
+
+<img width="500" height="95" alt="image" src="https://github.com/user-attachments/assets/bdecbb41-dfe5-4b7e-811e-059f028c6099" />
+
+Step 3: Click 'New Profile'. _This step only needs to be done once, after that, you just need to select your profile._ 
+
+<img width="500" height="277" alt="image" src="https://github.com/user-attachments/assets/e7f78be2-d7c4-4dc8-8389-a42291f16e5f" />
+
+Step 4: Select all channels for which you want to generate output. 
+
+<img width="500" height="759" alt="image" src="https://github.com/user-attachments/assets/eb2d9f76-f44e-4b70-8831-a4ad24a46087" />
+
+Step 5: Select the profile and click 'Ready'. 
+
+<img width="500" height="253" alt="image" src="https://github.com/user-attachments/assets/7a56fc5e-22c5-462a-bf35-aca362d30253" />
+
+Step 6: Name your file and click 'Start'. 
+
+<img width="300" height="465" alt="image" src="https://github.com/user-attachments/assets/859c57ea-7fbb-4727-96ca-d13ac2d05eae" />
+
+Step 7: Stop recording. 
+
+<img width="500" height="150" alt="image" src="https://github.com/user-attachments/assets/8251a5d7-7470-4ea0-848a-1b98b6086bcd" />
+
+Step 8: Export and safe your datafile.
+
+<img width="500" height="170" alt="image" src="https://github.com/user-attachments/assets/71ebea5d-b081-47a7-ac61-f7740db4030f" />
 
 
 
