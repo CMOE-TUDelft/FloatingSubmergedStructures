@@ -1,8 +1,50 @@
 # Mp3 Software Guidelines
 
-This chapter gives a guiline how to use the Mp3 software. 
+This chapter provides a guideline on how to use the Mp3 software. 
 
 ## How to install Mp3
+Step 1: If you have downloaded Mp3 from the USB to your computer, open the software. You are starting a new configuration, so the page should be empty. First, load a script. This script is used to read the green box (which records the forces from the sensors). Click ‘Scripts’ and then ‘Start Script’. 
+
+<img width="500" height="126" alt="image" src="https://github.com/user-attachments/assets/f2a6a101-108c-4041-8563-d76120e51fef" />
+
+Check the number the green box you are using. In this case, we use box 11.
+
+<img width="500" height="317" alt="image" src="https://github.com/user-attachments/assets/b4421a5d-56e2-4c86-9ed4-372610a6a567" />
+
+Then, add a page by right-clicking. You will see your page appear in the bottom right corner. 
+
+<img width="176" height="100" alt="image" src="https://github.com/user-attachments/assets/7b01ddbe-6ac2-4b56-88f7-515e756bbf96" />
+<img width="277" height="100" alt="image" src="https://github.com/user-attachments/assets/ced15f0a-c117-4a0a-9768-dd084f50020a" />
+
+Step 2: In your script (open in Finder), check if the number of the green box corresponds to the number the script is loading, in this case it is 11. Also, check the number of the page. 
+
+<img width="500" height="451" alt="image" src="https://github.com/user-attachments/assets/c1d8dab7-5d60-4def-9219-373ee36996c4" />
+
+_If you use more green boxes because you are running the experiment with more sensors, you can add additional scripts. Make sure to change the box number. You can also change the number of the first channel under 'firstchannel' in each script to avoid overlapping channel numbers._
+
+Step 3: Add channels to your script by clicking on 'Settings'. 
+
+<img width="500" height="123" alt="image" src="https://github.com/user-attachments/assets/836fb851-dcaf-459a-abfe-a12882875f95" />
+
+A setup dialog will appear. Click on 'Add Channels'. 
+
+<img width="300" height="269" alt="image" src="https://github.com/user-attachments/assets/4b8c5130-2123-48ab-83ee-f04fd9029587" />
+
+Choose as many channels as you want, it is better to add too many channels than too few. Also, check in the setup dialog if your script is loaded under 'Scripts'. Click 'Ok'. 
+
+<img width="500" height="360" alt="image" src="https://github.com/user-attachments/assets/1c6ef77e-4190-4637-8cd1-d9905b02574e" />
+
+Then click the 'Channels' tab in the setup dialog and right-click a channel. Here you can change the settings of your channel. Make sure 'Median' is selected to filter the output. 
+
+<img width="500" height="297" alt="image" src="https://github.com/user-attachments/assets/3b5899eb-2261-411d-b60f-3c3542eb17f8" />
+
+Step 4: Click and drag your mouse to create a toolbar. You will see the following options appear. Create a 'Num View' and click on 'A Largelist Type'. 
+
+<img width="300" height="391" alt="image" src="https://github.com/user-attachments/assets/d8c97322-1e58-48c8-823f-21870037e112" />
+
+Add to the Num View the channels you want to monitor for forcing. Righ-click and select 'Properties'. Then choose the channels you want to display. In this case, we select channels 000 to 003. 
+
+
 
 ## How to use Mp3
 If everything is sep up on your computer, you only need to use the table shown in the figure below to read the forcing. Note that in Mp3, the channels are numbered starting from 0, so sensor 1 correspond to channel 0. 
