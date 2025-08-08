@@ -112,7 +112,7 @@ Make a calibration set up (see picture below), record calibration data and store
 5. Attach displacement sensors to measure platform offset or mooring elongation.
 6. Verify all mechanical connections and safety clamps.
 
-Sketch the setup and label all components. Measure and note the geometry of the mooring lines (length, pretension, angle). The set up should look like the pictures below. 
+Sketch the setup and label all components. Measure and note the geometry of the mooring lines (length, pretension, angle). The set up should look like the pictures below. The waterdepth is 40 cm. 
 
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/90afbecb-0f72-4d4f-a9f1-fff07d3b65e1" />
 
