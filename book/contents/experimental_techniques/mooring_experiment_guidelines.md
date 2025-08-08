@@ -84,6 +84,7 @@ Before starting the experiment:
   - Set appropriate sampling rate (suggested: 10–50 Hz).
 
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/3451c019-d1a9-4324-bfb5-a626f43c3e27" />
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/0d1e85e3-643e-41ab-a0cd-f7f2667f7eef" />
 
 
 \
