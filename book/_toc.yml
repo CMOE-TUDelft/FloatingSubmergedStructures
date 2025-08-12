@@ -86,15 +86,25 @@ parts:
   - caption: Mooring systems
     numbered: 3
     chapters:
-      - file: contents/mooring_systems/index.md
-        title: Introduction to mooring systems
-      - file: contents/mooring_systems/concepts/index.md
+      - file: contents/mooring_systems/concepts/introduction.md
         title: Mooring concepts
+        sections:
+        - file: contents/mooring_systems/concepts/definition/definition.md
+          title: Definition of mooring systems
+        - file: contents/mooring_systems/concepts/purpose/purpose.md
+          title: Purpose of mooring systems
+        - file: contents/mooring_systems/concepts/types/types.md
+          title: Types of mooring systems
       - file: contents/mooring_systems/components/index.md
         title: Mooring components
         sections:
         - file: contents/mooring_systems/components/segment_type/index.md
           title: Segment types
+          sections:
+          - file: contents/mooring_systems/components/segment_type/chain/chain.md
+            title: Chain
+          - file: contents/mooring_systems/components/segment_type/rope/rope.md
+            title: Rope
         - file: contents/mooring_systems/components/materials/index.md
           title: Materials
         - file: contents/mooring_systems/components/anchors/index.md
@@ -164,3 +174,4 @@ parts:
     chapters:
       - file: contents/practical_information/courseschedules/index.md
       - file: contents/practical_information/examinfo/index.md
+      - file: contents/practical_information/content/content_page.md
