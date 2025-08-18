@@ -86,14 +86,14 @@ parts:
   - caption: Mooring systems
     numbered: 3
     chapters:
-      - file: contents/mooring_systems/concepts/introduction.md
+      - file: contents/mooring_systems/concepts/index.md
         title: Mooring concepts
         sections:
-        - file: contents/mooring_systems/concepts/definition/definition.md
+        - file: contents/mooring_systems/concepts/definition/index.md
           title: Definition of mooring systems
-        - file: contents/mooring_systems/concepts/purpose/purpose.md
+        - file: contents/mooring_systems/concepts/purpose/index.md
           title: Purpose of mooring systems
-        - file: contents/mooring_systems/concepts/types/types.md
+        - file: contents/mooring_systems/concepts/types/index.md
           title: Types of mooring systems
       - file: contents/mooring_systems/components/index.md
         title: Mooring components
@@ -101,12 +101,21 @@ parts:
         - file: contents/mooring_systems/components/segment_type/index.md
           title: Segment types
           sections:
-          - file: contents/mooring_systems/components/segment_type/chain/chain.md
+          # - file: contents/mooring_systems/components/segment_type/interactive/plotly.ipynb
+          #   title: Interactive segment type
+          # - file: contents/mooring_systems/components/segment_type/interactive/interactive.ipynb
+          #   title: Interactive segment type (Jupyter Notebook)
+          - file: contents/mooring_systems/components/segment_type/chain/index.md
             title: Chain
-          - file: contents/mooring_systems/components/segment_type/rope/rope.md
+          - file: contents/mooring_systems/components/segment_type/rope/index.md
             title: Rope
         - file: contents/mooring_systems/components/materials/index.md
           title: Materials
+          sections:
+          - file: contents/mooring_systems/components/materials/steel/index.md
+            title: Steel
+          - file: contents/mooring_systems/components/materials/synthetics/index.md
+            title: Synthetic materials
         - file: contents/mooring_systems/components/anchors/index.md
           title: Anchors
         - file: contents/mooring_systems/components/jewelry/index.md
