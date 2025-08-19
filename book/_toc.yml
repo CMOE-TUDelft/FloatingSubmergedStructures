@@ -118,8 +118,15 @@ parts:
             title: Synthetic materials
         - file: contents/mooring_systems/components/anchors/index.md
           title: Anchors
+          sections:
+          - file: contents/mooring_systems/components/anchors/overview/index.md
+            title: Overview of anchor types
+          - file: contents/mooring_systems/components/anchors/selection/index.md
+            title: Anchor selection
         - file: contents/mooring_systems/components/jewelry/index.md
           title: Auxiliar components
+        - file: contents/mooring_systems/components/system_design/index.md
+          title: System Approaches
       - file: contents/mooring_systems/mooring_loads/index.md
         title: Mooring loads
       - file: contents/mooring_systems/analysis/index.md

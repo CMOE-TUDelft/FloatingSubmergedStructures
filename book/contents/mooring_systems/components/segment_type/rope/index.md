@@ -14,6 +14,6 @@ Typical placement of rope segments is in the **middle portion** of the line, sus
 
 This combination allows the mooring system to balance stability (heavy chain near seabed), reduced load transfer (light rope in the span), and robust connections (chain or steel wire near the floater).
 
-```{figure} schematic.png
+```{figure} ../../../../../figures/schematic.png
 Joshua Bauer, NREL
 ```

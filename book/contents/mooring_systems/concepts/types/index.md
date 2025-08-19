@@ -13,7 +13,7 @@
 :::{tab-item} Floating Wind Assets
 :sync: floater1
 
-```{figure} ../figures/image9.png
+```{figure} ../../../../figures/image9.png
 ---
 name: fig-floating-wind-assets
 ---
@@ -25,7 +25,7 @@ Source: [Acteon](https://acteon.com/blog/floating-wind-mooring-options/)
 :::{tab-item} Deepwater Mooring
 :sync: floater2
 
-```{figure} ../figures/image7.png
+```{figure} ../../../../figures/image7.png
 ---
 name: fig-deepwater-mooring
 ---
@@ -37,7 +37,7 @@ Source: [Pinterest](https://www.pinterest.com/pin/424112489894781933/)
 :::{tab-item} FPSO Turret System
 :sync: floater3
 
-```{figure} ../figures/image8.png
+```{figure} ../../../../figures/image8.png
 ---
 name: fig-fpso-turret
 ---

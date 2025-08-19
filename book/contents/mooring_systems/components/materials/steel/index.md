@@ -7,7 +7,7 @@ Steel wire ropes are composed of multiple layers of helically twisted steel wire
 - **Advantages**: High strength, established manufacturing standards, predictable stiffness.  
 - **Disadvantages**: Heavy compared to synthetic ropes (especially in deep water), prone to corrosion, more expensive than synthetic alternatives (~\$75/m/MBL).  
 
-```{figure} ../../figures/image15.png
+```{figure} ../../../../../figures/image15.png
 name: fig-spiral-strand
 ---
 Steel wire rope. A spiral strand design with many inner strands.

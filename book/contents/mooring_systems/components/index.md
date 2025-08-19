@@ -11,7 +11,7 @@ A mooring system consists of several key components:
 
 
 
-```{figure} overview.png
+```{figure} ../../../figures/overview.png
 
 Source: [Guide to Floating Offshore Wind](https://guidetofloatingoffshorewind.com/guide/b-balance-of-plant/b-3-mooring-system/)
 

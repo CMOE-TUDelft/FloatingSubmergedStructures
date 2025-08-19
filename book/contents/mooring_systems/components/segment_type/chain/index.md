@@ -17,7 +17,7 @@ Typically chains provide the connection from foundation to floater in certain se
 :::{tab-item} Studlink Chain
 :sync: chain1
 
-```{figure} ../../figures/image17.png
+```{figure} ../../../../../figures/image17.png
 ---
 name: fig-studlink-chain
 ---
@@ -28,7 +28,7 @@ Source: [AKF Anchor Chain](https://akfanchorchain.com/products/chains-accessorie
 
 :::{tab-item} Studless Chain
 :sync: chain2
-```{figure} ../../figures/image16.png
+```{figure} ../../../../../figures/image16.png
 ---
 name: fig-studless-chain
 ---
