@@ -6,4 +6,4 @@ Mendoza Espinosa, Jorge & Haagensen, Per & Köhler, Jochen. (2021). Analysis of 
 
 Choosing the right type of segment is essential to optimize a mooring system’s layout and performance. Different segments offer varying flexibility, strength, and damping characteristics, allowing designers to tailor the system to specific floater behavior and environmental conditions.
 
-<iframe src="../../../../figures/mooring_per_segment_dropdown_dynamic.html" width="800" height="600" frameborder="0"></iframe>
+<iframe src="../../../../figures/mooring_interactive.html" width="1000" height="600" frameborder="0"></iframe>

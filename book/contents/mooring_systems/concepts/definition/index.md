@@ -1,5 +1,6 @@
 # Definition of a Mooring System
 
+
 A **mooring system** is a collection of lines, anchors, and connection hardware designed to keep floating or submerged offshore structures in a desired position relative to the seabed. These systems transfer environmental loads, such as wind, waves, and currents, into the seabed, ensuring the structure remains operational and stable under both normal and extreme conditions. Mooring systems are used in a variety of applications, including floating wind turbines, offshore platforms, and subsea equipment.
 
 ```{figure} ../../../../figures/mooring_simulation.gif

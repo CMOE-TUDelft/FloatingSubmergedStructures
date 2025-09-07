@@ -44,5 +44,79 @@ It can be understood that in deeper water (more than this 200 m) a full chain mo
 This example shows a line with a fairlead at 820 m from the seabed composed of 300 m chain on the seabed, connected to the anchor. The next segment is synthetic line of 1425 meter. The last segment is connected to the floater and is similar to the ground chain and is 60 meters long.
 
 
+````{dropdown} _Click to expand the simplified catenary formula derivation!_
+This derivation is taken from **OE44100: Floating Structures & Offshore Moorings by Sebastian Schreier**, simplified *without* stretch and assuming no wave/current loads.
 
+---
 
+### Step 1: Consider a small element
+A mooring element of length $ds$ has tension components $F_x$ (horizontal) and $F_z$ (vertical):
+
+![Mooring Element](../../../../figures/mooring_element.png)
+
+**Assumptions:**
+1. No external horizontal forces → horizontal tension constant:  
+   $
+   F_x = \text{constant}.
+   $  
+2. Vertical equilibrium supports weight in water:  
+   $
+   dF_z = w\, ds, \quad w = (\mu g)\,(1 - \rho_w/\rho_s).
+   $  
+3. Geometry (slope relation):  
+   $
+   ds = \sqrt{dx^2 + dz^2} = \sqrt{1 + (dz/dx)^2}\, dx, \quad dz/dx = F_z/F_x.
+   $
+---
+
+### Step 2: Differential equation
+1. From vertical force balance:  
+    $
+    \frac{dF_z}{dx} = w \sqrt{1 + (dz/dx)^2}.
+    $  
+2. Substitute $F_z = F_x\, dz/dx$:  
+    $
+    F_x \frac{d^2 z}{dx^2} = w \sqrt{1 + (dz/dx)^2}.
+    $
+3. Let $p = dz/dx$, then  
+    $
+    \frac{dp}{\sqrt{1+p^2}} = \frac{w}{F_x} dx.
+    $
+---
+
+### Step 3: Integrate slope
+1. Integrate
+    $
+    \int \frac{dp}{\sqrt{1+p^2}} = \int \frac{w}{F_x} dx
+    \quad\Rightarrow\quad
+    \sinh^{-1}(p) = \frac{w}{F_x}x + C_1
+    $  
+    $
+    \text{so } dz/dx = p = \sinh\left(\frac{w}{F_x}x + C_1\right).
+    $
+---
+
+### Step 4: Integrate position
+1. Integrate
+    $
+    z(x) = \int \sinh\left(\frac{w}{F_x}x + C_1\right) dx
+    = \frac{F_x}{w} \cosh\left(\frac{w}{F_x}x + C_1\right) + C_2.
+    $
+2. **Boundary conditions at anchor:** $x=0, z=0, F_z=0$  
+    $
+    C_1 = 0, \quad C_2 = -F_x/w.
+    $
+3. **Final shape:**  
+    $
+    \boxed{z(x) = \frac{F_x}{w} \left[\cosh\left(\frac{w}{F_x} x\right) - 1\right]}
+    $
+---
+
+### Step 5: Key points for design
+1. Horizontal tension constant: $F_x$.  
+2. Vertical tension along the chain: $F_z = F_x \sinh(\frac{w}{F_x} x)$.  
+3. Maximum tension occurs at fairlead.  
+4. Seabed contact if total chain length > suspended length.  
+5. Provides first-order estimates for mooring design, easy to visualize and teach.
+
+````

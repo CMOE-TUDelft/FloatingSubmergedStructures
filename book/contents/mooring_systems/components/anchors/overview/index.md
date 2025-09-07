@@ -9,7 +9,7 @@ https://www.sciencedirect.com/book/9780128185513/mooring-system-engineering-for-
 ::::{tab-set}
 
 :::{tab-item} Gravity (Clump Weight) Anchor
-A gravity anchor, also known as a deadweight anchor, resists loads through its own submerged weight and the friction it generates with the seabed. It can be constructed from a concrete block or a steel container filled with heavy material such as stone.  
+Gravity Anchor: The gravity anchor or dead weight requires such a submerged weight that the vertical & horizontal load from the mooring line is offset. The horizontal load requires sufficient friction on the seabed to be feasible. It can consist of a concrete block or a steel container with heavy stone. Depending on required capacity the actual weight can become an issue for installation and removal. It is not very common and hardly used in practice.
 
 - **Capacity**: Dependent on mass and seabed friction; capable of handling both horizontal and vertical loads.  
 - **Limitations**: Large weight requirements for high loads make installation and removal challenging.  
@@ -17,7 +17,8 @@ A gravity anchor, also known as a deadweight anchor, resists loads through its o
 :::
 
 :::{tab-item} Driven Pile
-Driven piles are widely used for permanent moorings in a broad range of soil conditions, offering high capacity in both horizontal and vertical directions.  
+A driven pile is used a lot for permanent moorings. It is applicable in a wide range of soil conditions and can be designed with a high capacity in both horizontal and vertical direction. Installation is however an issue, partly due to the weight or size involved but also due to the use of pile driving which has a noise impact which is less and less accepted. Note however that the noise impact for anchor piles is not as large an issue as with mono piles. Alternatively pile driving can be done by vibration hammers but they are not yet feasible for deep water. If a system needs to be removed, the pile needs to be cut below the mudline while full removal is not really feasible yet (but innovation studies ongoing using vibro or overpressure techniques).
+
 
 - **Design**: Diameters typically range from 2–5 m with length-to-diameter (L/D) ratios up to 60.  
 - **Efficiency**: Horizontal and vertical force-over-mass ratios from 12–100, depending on soil.  
@@ -27,7 +28,7 @@ Driven piles are widely used for permanent moorings in a broad range of soil con
 :::
 
 :::{tab-item} Drag or Embedment Anchor
-Drag embedment anchors are cost-effective and widely used in offshore applications, particularly in cohesive soils.  
+Probably the most well-known anchor is the drag or embedment anchor. For the offshore, high capacity anchors have been developed and it is one of the more cost effective solutions. It is best suited for cohesive soils. It is able to provide the horizontal load capacity. The drag anchor is not suitable for vertical load and as a maximum often pulling at 10 degrees with the seabed is the limit. An important advantage is the easy installation and removal. But for high load levels installation feasibility becomes problematic due to limited bollard pull.
 
 - **Capacity**: High horizontal load capacity; for example, the Stevpris Mk5 (30 mT anchor) can provide ~1700 mT ultimate holding capacity in sand and hard clay.  
 - **Efficiency**: Horizontal force-over-mass ratio from 30–300, depending on soil.  
@@ -36,7 +37,7 @@ Drag embedment anchors are cost-effective and widely used in offshore applicatio
 :::
 
 :::{tab-item} Suction Pile
-Suction piles are large-diameter, cylindrical anchors installed by pumping water out from inside the pile to create pressure-driven penetration into the seabed.  
+The suction pile application depends on the soil type. It is less suitable for loose sandy or stiff soils. It has a high horizontal capacity and can also generate vertical capacity but that depends on the type of soil. Another strong advantage is the easy installation, with much less noise than the driven pile and the easy removal. Installation in layered or competent soils (e.g. heavily over consolidated clays, gravels, chalk, weak rock) is generally not feasible.
 
 - **Design**: Diameters generally < 16 m, with L/D < 1 in sand and up to ~8 in clay.  
 - **Efficiency**: Horizontal ratio from 50–250; vertical ratio from 9–100 (vertical capacity highly soil-dependent).  
@@ -45,7 +46,7 @@ Suction piles are large-diameter, cylindrical anchors installed by pumping water
 :::
 
 :::{tab-item} Torpedo Pile
-Developed in Brazil, the torpedo pile is a free-fall anchor dropped from a height (e.g., 100 m) above the seabed, penetrating under its own kinetic energy.  
+The torpedo pile was developed in Brazil. The principle is based on a pile which is released at some (e.g. 100 m) height from the seabed and penetrates the seabed based on its free fall velocity, which is relatively easy. It is therefore used in deep water in soft to medium clay conditions. It has both vertical and horizontal capacity. But prediction (design) of holding capacity is very uncertain as the installation process is uncontrolled. 
 
 - **Capacity**: Provides both vertical and horizontal resistance in soft to medium clays.  
 - **Advantages**: Simple deep-water installation.  
@@ -53,7 +54,7 @@ Developed in Brazil, the torpedo pile is a free-fall anchor dropped from a heigh
 :::
 
 :::{tab-item} Vertical Load Anchor (VLA)
-The VLA is an evolution of the drag embedment anchor, designed to handle both horizontal and significant vertical loads, particularly in layered soft clays.  
+The VLA or Vertical load anchor is a development of the drag embedment anchor which is suitable for (layered) soft clays. Next to the horizontal capacity, common to drag embedment anchors, the VLA also provides considerable vertical capacity. Similar to drag embedment anchors the installation and removal are relatively easy. 
 
 - **Advantages**: Combines the ease of installation/removal of drag anchors with vertical load capability.  
 - **Limitations**: Primarily suited to soft cohesive soils.

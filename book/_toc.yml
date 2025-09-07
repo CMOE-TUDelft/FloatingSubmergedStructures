@@ -101,10 +101,6 @@ parts:
         - file: contents/mooring_systems/components/segment_type/index.md
           title: Segment types
           sections:
-          # - file: contents/mooring_systems/components/segment_type/interactive/plotly.ipynb
-          #   title: Interactive segment type
-          # - file: contents/mooring_systems/components/segment_type/interactive/interactive.ipynb
-          #   title: Interactive segment type (Jupyter Notebook)
           - file: contents/mooring_systems/components/segment_type/chain/index.md
             title: Chain
           - file: contents/mooring_systems/components/segment_type/rope/index.md
@@ -137,6 +133,11 @@ parts:
           sections:
           - file: contents/mooring_systems/catenary/single_segment_line/index.md
             title: Single segment line
+            sections:
+            - file: contents/mooring_systems/catenary/single_segment_line/examples/example1.md
+              title: Example 1
+            - file: contents/mooring_systems/catenary/single_segment_line/examples/example2.md
+              title: Example 2
           - file: contents/mooring_systems/catenary/multi_line/index.md
             title: Multiple lines
           - file: contents/mooring_systems/catenary/multi_segment_plus_components/index.md
