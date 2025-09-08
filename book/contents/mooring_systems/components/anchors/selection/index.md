@@ -1,4 +1,4 @@
-## Anchor Selection for Floating Offshore Wind
+# Anchor Selection for Floating Offshore Wind
 
 A very good overview of the use of the various foundation options specifically for Floating Offshore Wind is given by the paper “Anchor geotechnics for floating offshore wind: Current technologies and future innovations” 
 It provides some indication of the sizes and capacities and clarifies which FOW system would benefit from which foundation option:

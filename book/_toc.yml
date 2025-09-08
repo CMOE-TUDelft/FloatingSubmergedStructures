@@ -33,7 +33,7 @@ parts:
     title: 
     numbered: 2
     chapters:
-      - file: contents/loads/intro/index.md
+      - file: contents/loads/index.md
         title: Introduction to loads on floating and submerged structures
       - file: contents/loads/self_weight/index.md
         title: Self weight
@@ -84,7 +84,7 @@ parts:
         title: Life cycle assessment
 
   - caption: Mooring systems
-    numbered: 3
+    numbered: 4
     chapters:
       - file: contents/mooring_systems/concepts/index.md
         title: Mooring concepts
@@ -123,8 +123,15 @@ parts:
           title: Auxiliar components
         - file: contents/mooring_systems/components/system_design/index.md
           title: System Approaches
-      - file: contents/mooring_systems/mooring_loads/index.md
-        title: Mooring loads
+      - file: contents/mooring_systems/mooring_system_loading/index.md
+        title: Mooring system loading
+        sections:
+        - file: contents/mooring_systems/mooring_system_loading/mooring_loads/index.md
+          title: Mooring line loads
+        - file: contents/mooring_systems/mooring_system_loading/design_codes/index.md
+          title: Design codes and standards
+        - file: contents/mooring_systems/mooring_system_loading/concept_design/index.md
+          title: Mooring concept design
       - file: contents/mooring_systems/analysis/index.md
         title: Analysis of mooring systems
         sections:
@@ -150,6 +157,18 @@ parts:
           title: Tension leg platforms
       - file: contents/mooring_systems/installation_maintenance/index.md
         title: Installation and maintenance of mooring systems
+        sections:
+        - file: contents/mooring_systems/installation_maintenance/installation/index.md
+          title: Installation of mooring systems
+          sections:
+          - file: contents/mooring_systems/installation_maintenance/installation/vessels/index.md
+            title: Installation Vessels
+          - file: contents/mooring_systems/installation_maintenance/installation/tlp_installation/index.md
+            title: TLP Installation
+        - file: contents/mooring_systems/installation_maintenance/maintenance/index.md
+          title: Maintenance of mooring systems
+        - file: contents/mooring_systems/installation_maintenance/costs/index.md
+          title: Costs of mooring systems
       - file: contents/mooring_systems/lca/index.md
         title: Life cycle assessment of mooring systems
 
@@ -158,7 +177,7 @@ parts:
       - file: contents/modeling_analysis/conceptual_design/index.md
         title: Conceptual design
         sections:
-        - file: contents/modeling_analysis/conceptual_desing/quasi_static_analysis.md
+        - file: contents/modeling_analysis/conceptual_design/quasi_static_analysis.md
           title: Quasi-static analysis
       - file: contents/modeling_analysis/dynamic_analysis/index.md
         title: Dynamic analysis

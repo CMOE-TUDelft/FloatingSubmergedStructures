@@ -17,9 +17,7 @@ Steel wire ropes are composed of multiple layers of helically twisted steel wire
 
 ```{figure} ../../../../../figures/image15.png
 name: fig-spiral-strand
----
 Steel wire rope. A spiral strand design with many inner strands.
 Source: [Bekaert](https://www.bekaert.com/content/dam/corporate/ja/OFFSHORE%20RENEWABLES%20CATALOGUE.pdf)
 ```
 
----

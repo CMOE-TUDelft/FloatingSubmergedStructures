@@ -1,9 +1,7 @@
-## Overview of Anchor Types
+# Overview of Anchor Types
 
 ```{figure} ../../../../../figures/image29.png
----
-https://www.sciencedirect.com/book/9780128185513/mooring-system-engineering-for-offshore-structures
-
+Source: [Mooring System Engineering](https://www.sciencedirect.com/book/9780128185513/mooring-system-engineering-for-offshore-structures)
 ```
 
 ::::{tab-set}

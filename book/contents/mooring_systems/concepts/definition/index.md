@@ -13,7 +13,6 @@ Mooring systems are critical for maintaining the position of floating and submer
 ---
 name: fig-moored-FOWT-types
 link: https://www.nrel.gov/news/program/2020/nrel-floats-new-offshore-wind-cost-optimization-tool.html
----
 Classic floating wind platform concepts that include spar (left), semisubmersible (center), and tension leg platforms (right).  
 Source: [Josh Bauer, NREL ](https://www.nrel.gov/news/program/2020/nrel-floats-new-offshore-wind-cost-optimization-tool.html)
 ```

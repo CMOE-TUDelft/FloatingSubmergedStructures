@@ -1,5 +1,7 @@
 # Components
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mYwELmLJI_8?si=FidERu4Ak_M7005M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Chains, wire ropes, synthetic lines—each has trade-offs in terms of strength, flexibility, corrosion resistance, and cost. Connectors, such as shackles and fairleads, form the critical links (literally) between segments.
 
 A mooring system consists of several key components:

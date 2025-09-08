@@ -4,6 +4,8 @@ bibliography: references.bib
 
 # Floating and Submerged Structures
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UmGq-3JZFJI?si=t4IofjJsJQ5UnNf0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Welcome to this open, interactive book on Floating and Submerged Structures. This resource is an integral part of the Hydraulic and Offshore Structures (HOS) module B, offered within the [Master in Civil Engineering](https://www.tudelft.nl/onderwijs/opleidingen/masters/ce/msc-civil-engineering) program at Delft University of Technology (TU Delft). The content not only serves this course but is also shared across other modules within the Civil Engineering and Geosciences master—and even extends into related programs such as Renewable Energies and Floating Wind in the Aerospace faculty.
 
 ## Scope
