@@ -1,0 +1,3 @@
+[submodule "book/machine_learning/llm_docker_1"]
+	path = book/machine_learning/llm_docker_1
+	url = https://github.com/HamsterINC/lmm_docker.git
