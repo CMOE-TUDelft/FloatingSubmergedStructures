@@ -1,0 +1,53 @@
+# Extracting data from Copernicus dataset
+
+The following steps can be taken to extract environmental data at the location:
+
+## 1. Download data from online dataset
+
+
+1. Log in with user account on the site: https://cds.climate.copernicus.eu/ <br>
+<br>
+Use e-mail: makeYourEmailAccount<br>
+Password: Password<br>
+<img width="80%" src="./img/nb01_fig001.png" />
+
+1. Select **Datasets** and look for **ERA5 hourly data on single levels from 1940 to present**<br>
+<img width="80%" src="./img/nb01_fig001f.png" />
+
+1. Select **Download** and choose **Reanalysis** <br>
+<img width="80%" src="./img/nb01_fig002.png" />
+
+1. Here you may pick one or two variables of interest. <br>
+It is noted that more detailed ocean waves data can be found under a separate tab. <br>
+<img width="80%" src="./img/nb01_fig002b_2.png" /><br>
+We are interested in 
+
+- **Significant height of wind waves**.
+- **Significant height of total swell**
+- **Peak wave period**
+- **Significant height of combined wind waves and swell waves**
+
+
+1. Choose one or several years. <br> 
+For the statistical review it is important to have a number of years but the data which can be extracted is limited. <br> 
+The choice here is to extract the years **2018**, **2019**, **2020** and **2021**. Next to this all year is chosen **January** etc. as well as all days.  <br>
+<img width="80%" src="./img/nb01_fig003.png" /> 
+
+1. For the time three hour values are chosen (to reduce the amount of data).  <br>
+<img width="80%" src="./img/nb01_fig004.png" /> 
+
+1. For Geographical area choose **Sub-region**. The longitude & latitude limits are given at the western and eastern side as well as Northern and Southern side. Data is extracted in the area between the values. <br>
+<img width="80%" src="./img/nb01_fig005.png" /> 
+
+1. On the format choose **NetCFD** <br>
+<img width="80%" src="./img/nb01_fig006.png" /> 
+
+1. If all has been filled in correctly data can be extracted. **Submit Form** <br>
+<img width="80%" src="./img/nb01_fig007.png" /> 
+
+1. The request is now shown in a new page and by expanding the product details are shown. This request took around 8 min to deliver. <br>
+<img width="80%" src="./img/nb01_fig008.png" /> 
+
+1. The data can be downloaded. Once this is done the Python script can be used to extract the data.  <br>
+<img width="80%" src="./img/nb01_fig009.png" /> 
+
