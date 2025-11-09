@@ -1,0 +1,12 @@
+name: jupyter-book-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyter-book
+  - ipywidgets
+  - matplotlib
+  - plotly
+  - numpy
+  - pandas
+  - jupyterlab

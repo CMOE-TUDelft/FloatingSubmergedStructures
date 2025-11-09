@@ -8,6 +8,11 @@ only_build_toc_files: true
 
 html:
   baseurl :  "https://cmoe-tudelft.github.io/FloatingSubmergedStructures/" 
+  launch_buttons:
+    binderhub_url: https://mybinder.org
+    thebe: true
+  thebe_config:
+    use_thebe_lite: true
 
 sphinx:
   config:

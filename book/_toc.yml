@@ -26,6 +26,11 @@ parts:
         title: Tides
       - file: contents/env_source_characterization/earthquake/index.md
         title: Earthquakes
+      - file: contents/env_source_characterization/EVA/index.md
+        title: Extreme Value Analysis
+        sections:
+          - file: contents/env_source_characterization/EVA/What_are_extremes.md
+            title: What are extremes?
       - file: contents/env_source_characterization/other/index.md
         title: Other environmental sources
   
