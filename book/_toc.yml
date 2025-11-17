@@ -34,7 +34,7 @@ parts:
         - file: contents/env_source_characterization/EVA/Sampling_techniques.md
           title: Sampling techniques for extremes
         - file: contents/env_source_characterization/EVA/Sampling_techniques.ipynb
-          title: Notebook exercise: Sampling methods for EVA
+          title: Notebook exercise Sampling methods for EVA
       - file: contents/env_source_characterization/other/index.md
         title: Other environmental sources
   
