@@ -33,6 +33,11 @@ parts:
           title: What are extremes?
         - file: contents/env_source_characterization/EVA/Sampling_techniques.md
           title: Sampling techniques for extremes
+<<<<<<< HEAD
+=======
+        - file: contents/env_source_characterization/EVA/Sampling_techniques.ipynb
+          title: Notebook exercise Sampling methods for EVA
+>>>>>>> d2203d787c8f1975fd694968632f14a7cac7c133
       - file: contents/env_source_characterization/other/index.md
         title: Other environmental sources
   
