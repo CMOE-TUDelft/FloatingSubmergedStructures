@@ -19,7 +19,7 @@ The peak period ($T_p$) is another critical parameter in describing wave conditi
 ### Why are longer periods more impactful for larger structures?
 
 Longer wave periods are particularly impactful for large structures like floating and submerged tunnels for several key reasons:
-- **Resonance:** Every structure has a natural frequency at which it will oscillate with maximum amplitude. If the peak period of the waves is close to the natural period of the structure, resonance can occur, leading to dangerously large motions and potentially catastrophic failure.
+- **Resonance:** Every structure has a natural frequency at which it will oscillate with maximum amplitude. If the peak period of the waves is close to the natural period of the structure, resonance can occur, leading to dangerously large motions and potentially catastrophic failure.jupt
 - **Deeper Influence:** The energy of longer period waves penetrates deeper into the water column. This means that even submerged tunnels, which are less affected by shorter, surface waves, will experience significant forces from long-period swell.
 - **Greater Energy Content:** The peak period is associated with the most energetic waves in the sea state. Longer period waves, often referred to as swell, have traveled long distances and have accumulated significant energy.
 

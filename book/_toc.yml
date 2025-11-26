@@ -13,6 +13,8 @@ parts:
         title: Preliminaries
   
   - caption: Environmental Source Characterization
+    # title:
+    numbered: 3
     chapters:
       - file: contents/env_source_characterization/intro/index.md
         title: Introduction to environmental source characterization
@@ -33,8 +35,11 @@ parts:
           title: What are extremes?
         - file: contents/env_source_characterization/EVA/Sampling_techniques.md
           title: Sampling techniques for extremes
-        - file: contents/env_source_characterization/EVA/Sampling_techniques.ipynb
+        - file: contents/env_source_characterization/EVA/Sampling_techniques_exercise.ipynb
           title: Notebook exercise Sampling methods for EVA
+          sections:
+            - file: contents/env_source_characterization/EVA/Sampling_techniques_exercise_answers.ipynb
+              title: Notebook exercise Sampling methods for EVA - Answers
       - file: contents/env_source_characterization/other/index.md
         title: Other environmental sources
   
