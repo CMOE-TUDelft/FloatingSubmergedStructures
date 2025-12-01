@@ -28,6 +28,8 @@ parts:
         title: Tides
       - file: contents/env_source_characterization/earthquake/index.md
         title: Earthquakes
+      - file: contents/env_source_characterization/other/index.md
+        title: Other environmental sources
       - file: contents/env_source_characterization/EVA/index.md
         title: Extreme Value Analysis
         sections:
@@ -40,8 +42,6 @@ parts:
           sections:
             - file: contents/env_source_characterization/EVA/Sampling_techniques_exercise_answers.ipynb
               title: Notebook exercise Sampling methods for EVA - Answers
-      - file: contents/env_source_characterization/other/index.md
-        title: Other environmental sources
   
   - caption: Loads on Floating and Submerged Structures
     title: 
