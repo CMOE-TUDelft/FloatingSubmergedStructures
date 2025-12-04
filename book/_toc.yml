@@ -22,6 +22,9 @@ parts:
         title: Wind
       - file: contents/env_source_characterization/waves/index.md
         title: Waves
+        sections:
+        - file: contents/env_source_characterization/waves/JONSWAP_to_time_series.ipynb
+          title: From JONSWAP spectrum to time series
       - file: contents/env_source_characterization/currents/index.md
         title: Currents
       - file: contents/env_source_characterization/tides/index.md
