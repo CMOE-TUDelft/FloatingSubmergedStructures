@@ -30,3 +30,33 @@ To fully characterize a sea state, it is not enough to know just the significant
 The JONSWAP spectrum is a modification of the earlier Pierson-Moskowitz spectrum, which was developed for fully developed seas. The key difference is the inclusion of a "peak enhancement factor" ($\gamma$) in the JONSWAP model. This factor creates a more peaked and narrower spectrum compared to the Pierson-Moskowitz, which is more representative of the wave conditions observed in developing seas. The sharpness of this peak is important for understanding the potential for resonant interactions with structures.
 
 ![JONSWAP](FIG/JONSWAP.png)
+
+### How to go from the JONSWAP spectrum to a timeseries?
+
+The JONSWAP spectrum provides the statistical distribution of energy, but for time-domain simulations (such as analysing the motion of a floating and submerged tunnel using Finite Element Method), a wave elevation profile $\eta(t)$ is needed. To create this time series, the sea state is treated as a sum of simple, regular sine waves, each with a different frequency and amplitude. 
+
+**1. Discretizing the Spectrum**
+
+First, the continuous energy spectrum $S(f)$ is divided into $N$ frequency band, each with a width of $\Delta f$. For each band $i$, the central frequency is $f_i$. 
+
+**2. Calculating Wave Amplitudes**
+
+The area onder the spectrum curve for a specific frequency band represents the energy of the waves at that frequency. The amplitude $A_i$ of each component wave is derived from this energy. 
+
+$$
+\text{Energy}_i = S(f_i) \cdot \Delta f = \frac{1}{2} {A_i}^2 \longrightarrow A_i = \sqrt{2 \cdot S{f_i} \cdot \Delta f}
+$$
+
+**3. Applying Random Phases**
+
+If all waves with amplitude $A_i$ would be added together with the same starting point, they would peak simultaneously, creating an uncrealistically focussed wave. Real oceans have random phase relationships. To simulate this, a random phase angle $\phi_i$ is applied to each component, chosen from a uniform distribution between $0$ and $2 \pi$. 
+
+**4. Superposition (Summation)**
+
+Finally, all individual wave components are summed to construct the total surface elevation $\eta(t)$:
+
+$$
+\eta(t) = \sum_{i=1}^N A_i \cos(2 \pi f_i t + \phi_i)
+$$
+
+This results in a realistic, irregular wave train that statistically matches the JONSWAP spectrum. This will be practiced in the following Notebook. 
