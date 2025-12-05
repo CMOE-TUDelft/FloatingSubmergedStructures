@@ -33,7 +33,7 @@ parts:
     title: 
     numbered: 2
     chapters:
-      - file: contents/loads/index.md
+      - file: contents/loads/introduction/index.md
         title: Introduction to loads on floating and submerged structures
       - file: contents/loads/self_weight/index.md
         title: Self weight
