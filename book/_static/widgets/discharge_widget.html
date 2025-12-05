@@ -1,0 +1,78 @@
+<!-- save as: book/_static/widgets/discharge_widget.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Discharge PDF widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Plotly CDN -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { margin:0; padding:12px; font-family: system-ui, Segoe UI, Ubuntu, Roboto, Helvetica, Arial; }
+    #wrap { max-width: 900px; margin: 0 auto; }
+    #slider { width: 100%; }
+    .row { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+    .value { min-width: 100px; }
+  </style>
+</head>
+<body>
+<div id="wrap">
+  <div class="row">
+    <label for="slider"><strong>Discharge</strong></label>
+    <input id="slider" type="range" min="0.01" max="200" step="0.1" value="20">
+    <span class="value" id="val">20.00</span>
+  </div>
+  <div id="plot" style="height:420px;"></div>
+</div>
+<script>
+  // Parameters (mu corrected from 3.0ju to 3.0)
+  const mu = 3.0, sigma = 0.7;
+  const xmin = 0.01, xmax = 200, n = 1000;
+  const x = Array.from({length:n}, (_, i) => xmin + i*(xmax - xmin)/(n - 1));
+  function pdf(xv){
+    xv = Math.max(xv, 0.01);
+    return (1.0 / (xv * sigma * Math.sqrt(2 * Math.PI)))
+           * Math.exp(-Math.pow(Math.log(xv) - mu, 2) / (2 * sigma * sigma));
+  }
+  const y = x.map(pdf);
+  const ymax = Math.max(...y);
+
+  function makeData(d){
+    const yshade = x.map((xi, i) => xi >= d ? y[i] : null);
+    return [
+      {x:x, y:y, mode:'lines', name:'Probability density (mock)'},
+      {x:x, y:yshade, mode:'lines', fill:'tozeroy', line:{width:0}, showlegend:false},
+      {x:[d], y:[pdf(d)], mode:'markers', name:'Point', marker:{size:8}}
+    ];
+  }
+  function makeShapes(d){
+    const yd = pdf(d);
+    return [
+      {type:'line', x0:d, x1:d, y0:0, y1:ymax, line:{dash:'dash', width:2}},
+      {type:'line', x0:xmin, x1:xmax, y0:yd, y1:yd, line:{dash:'dash', width:2}}
+    ];
+  }
+
+  const layout = {
+    margin:{l:60, r:20, t:30, b:60},
+    xaxis:{title:'River discharge (units)', range:[xmin, xmax]},
+    yaxis:{title:'Probability density', rangemode:'tozero'},
+    showlegend:true,
+    shapes: makeShapes(20.0),
+    title:{text:'Mock Probability Density of River Discharge'}
+  };
+
+  Plotly.newPlot('plot', makeData(20.0), layout, {displayModeBar:false, responsive:true});
+
+  const slider = document.getElementById('slider');
+  const val = document.getElementById('val');
+  slider.addEventListener('input', () => {
+    const d = parseFloat(slider.value);
+    val.textContent = d.toFixed(2);
+    const yshade = x.map((xi, i) => xi >= d ? y[i] : null);
+    const yd = pdf(d);
+    Plotly.update('plot', {x:[x, x, [d]], y:[y, yshade, [yd]]}, {shapes: makeShapes(d)});
+  });
+</script>
+</body>
+</html>

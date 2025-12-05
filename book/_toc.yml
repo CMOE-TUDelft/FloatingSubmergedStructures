@@ -13,6 +13,8 @@ parts:
         title: Preliminaries
   
   - caption: Environmental Source Characterization
+    # title:
+    numbered: 3
     chapters:
       - file: contents/env_source_characterization/intro/index.md
         title: Introduction to environmental source characterization
@@ -20,6 +22,9 @@ parts:
         title: Wind
       - file: contents/env_source_characterization/waves/index.md
         title: Waves
+        sections:
+        - file: contents/env_source_characterization/waves/JONSWAP_to_time_series.ipynb
+          title: From JONSWAP spectrum to time series
       - file: contents/env_source_characterization/currents/index.md
         title: Currents
       - file: contents/env_source_characterization/tides/index.md
@@ -28,6 +33,18 @@ parts:
         title: Earthquakes
       - file: contents/env_source_characterization/other/index.md
         title: Other environmental sources
+      - file: contents/env_source_characterization/EVA/index.md
+        title: Extreme Value Analysis
+        sections:
+        - file: contents/env_source_characterization/EVA/What_are_extremes.md
+          title: What are extremes?
+        - file: contents/env_source_characterization/EVA/Sampling_techniques.md
+          title: Sampling techniques for extremes
+        - file: contents/env_source_characterization/EVA/Sampling_techniques_exercise.ipynb
+          title: Notebook exercise Sampling methods for EVA
+          sections:
+            - file: contents/env_source_characterization/EVA/Sampling_techniques_exercise_answers.ipynb
+              title: Notebook exercise Sampling methods for EVA - Answers
   
   - caption: Loads on Floating and Submerged Structures
     title: 
