@@ -33,6 +33,11 @@ parts:
         title: Earthquakes
       - file: contents/env_source_characterization/other/index.md
         title: Other environmental sources
+      - file: contents/env_source_characterization/data_collection/index.md
+        title: Data collection and processing
+        sections:
+        - file: contents/env_source_characterization/data_collection/nb01_a_extract_data.ipynb
+          title: Extract environmental data from online sources
       - file: contents/env_source_characterization/EVA/index.md
         title: Extreme Value Analysis
         sections:
