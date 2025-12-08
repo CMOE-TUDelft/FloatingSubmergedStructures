@@ -22,7 +22,7 @@ The influence of the tide depends entirely on how the tunnel is supported. We di
 
 In this configuration, the tunnel is a submerged tube suspended from surface-piercing pontoons. The defining characteristic is that the **structure wants to move vertically with the tide.**
 
-* **Shore Connections (The "Hinge" Problem):** This is the most critical design challenge. While the main tunnel rises and falls by several meters, the landfall points are fixed concrete points. The tunnel must allow for significant flexibility orexpansion joints at the ends to accommodate this vertical travel without snapping.
+* **Shore Connections (The "Hinge" Problem):** This is the most critical design challenge. While the main tunnel rises and falls by several meters, the landfall points are fixed concrete points. The tunnel must allow for significant flexibility or expansion joints at the ends to accommodate this vertical travel without snapping.
 * **Mooring Geometry:** As the water level rises, the distance between the floating hull and the seabed anchors increases.
     * *Slack Lines:* At low tide, mooring chains may go slack, losing their restoring stiffness.
     * *Peak Tension:* At high tide, the lines are pulled taut, significantly increasing the static tension before any wave loads are applied.
