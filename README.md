@@ -2,7 +2,7 @@
 
 [![call-deploy-book](https://github.com/TUDelft-books/TUDelft-template/actions/workflows/call-deploy-book.yml/badge.svg)](https://github.com/TUDelft-books/TUDelft-template/actions/workflows/call-deploy-book.yml)
 
-[![Deployed](https://img.shields.io/badge/deployed-yes-brightgreen.svg)]([https://cmoe-tudelft.github.io/SkyBoxAnalysis/python/skyboxdatapy.html](https://cmoe-tudelft.github.io/FloatingSubmergedStructures/main/contents/intro.html))
+[![Deployed](https://img.shields.io/badge/deployed-yes-brightgreen.svg)](https://cmoe-tudelft.github.io/FloatingSubmergedStructures/main/contents/intro.html)
 
 
 
