@@ -2,6 +2,10 @@
 
 [![call-deploy-book](https://github.com/TUDelft-books/TUDelft-template/actions/workflows/call-deploy-book.yml/badge.svg)](https://github.com/TUDelft-books/TUDelft-template/actions/workflows/call-deploy-book.yml)
 
+[![Deployed](https://img.shields.io/badge/deployed-yes-brightgreen.svg)]([https://cmoe-tudelft.github.io/SkyBoxAnalysis/python/skyboxdatapy.html](https://cmoe-tudelft.github.io/FloatingSubmergedStructures/main/contents/intro.html))
+
+
+
 > This page reuses CC BY 4.0 licensed content from https://github.com/TeachBooks/template.
 
 The template allows you to start your own open interactive textbook and hosting that textbook online without knowledge on Git, the Jupyter book package, python or anaconda. It doesn't elaborate on the collaborative functionalities of Git or how to edit the book. Please look at the TeachBooks manual (https://teachbooks.io/manual) to find more about that!
