@@ -31,8 +31,8 @@ parts:
         title: Tides
       - file: contents/env_source_characterization/earthquake/index.md
         title: Earthquakes
-      - file: contents/env_source_characterization/other/index.md
-        title: Other environmental sources
+      # - file: contents/env_source_characterization/other/index.md
+      #   title: Other environmental sources
       - file: contents/env_source_characterization/data_collection/index.md
         title: Data collection and processing
         sections:

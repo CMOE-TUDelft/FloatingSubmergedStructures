@@ -1,8 +1,5 @@
 # Extracting Environmental Data from Sattelite Datasets
 
-```{raw} html
-<iframe
-  src="../../../_static/widgets/stability_widget.html"
-  width="100%" height="520" style="border:0" loading="lazy">
-</iframe>
-```
+To analyse environmental data, you first have to obtain it. One method of using environmental data is to use sattelite data. 
+
+The following notebook extract and visualise wave data from the ERA5 dataset of the Copernicus sattelite. 
