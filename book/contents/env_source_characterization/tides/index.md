@@ -33,4 +33,4 @@ In this configuration, the tunnel is a submerged tube suspended from surface-pie
 In this configuration, the tunnel is submerged at a specific depth and held down by vertical tethers (tension legs) anchored to the seabed. The defining characteristic is that the **structure is fixed** and does *not* move with the tide.
 
 * **Hydrostatic Pressure Variation:** Since the tunnel stays at a fixed elevation while the water surface rises above it, the hydrostatic pressure acting on the concrete shell fluctuates constantly.
-    * *Fatigue:* This creates a predictable stress cycle every tidal change. Over a 100-year lifespan, the concrete shell must withstand these, making it an important fatigue load case to consider.
+    * *Fatigue:* This creates a predictable stress cycle every tidal change. Over a 100-year lifespan, the concrete shell must withstand these cycles, making it an important fatigue load case to consider.
