@@ -1,4 +1,4 @@
-# Hydrostatic
+# Hydrostatic Loads
 
 <!-- We explore the hydrostatics of submerged cylindrical structures using a numerical approach. The goal is to understand how submerged bodies interact with fluid pressure fields and to calculate key parameters such as the forces acting on the body and its submerged depth (draft). This serves as a practical application of hydrostatics and numerical methods.
 
@@ -41,11 +41,18 @@ $$
 
 which simplifies the formulation without changing any resulting forces. Only pressure differences matter for hydrostatic loading, so the absolute value of $p_0$ does not affect the net hydrostatic force on a structure.
 
-<!-- <iframe src="../../../figures/mooring_position.html" width="1200" height="600" frameborder="0"></iframe>  TODO Add figure from lecture slides -->
+```{figure} figures/pressure.png
+---
+name: fig-hydrostatic-pressure
+width: 80%
+align: center
+---
+Hydrostatic pressure on a square fully submerged in water
+```
 
 ## Archimedes’ Principle and Buoyancy
 
-When a body is submerged (fully or partially), the surrounding water exerts a net upward force known as buoyancy. According to Archimedes’ Principle:
+When a body is suzbmerged (fully or partially), the surrounding water exerts a net upward force known as buoyancy. According to Archimedes’ Principle:
 
 _"The buoyant force equals the weight of the displaced fluid."_
 
@@ -61,22 +68,111 @@ With:
 - $g$ = gravity acceleration constant
 - $V$ = Volume of the submerged part of the body
 
-The resulting buoyant force is the vertical component of the hydrostatic pressure integral over the surface of the body: 
+While $F_B = \rho g V$ is sufficient for simple geometries or when only the total vertical buoyant force is needed, it cannot always be used directly when the submerged shape is complex or when the wetted geometry changes with draft (e.g. a circular cylinder entering the water). 
+
+Therefore, the resulting buoyant force is computed as the vertical component of the hydrostatic pressure integral over the surface of the body: 
 
 $$
 F_B = \left( \int_S p_h \,\vec{\mathbf{n}}_S \, dS \right) \cdot \vec{\mathbf{n}}_z
 $$
 
-<!-- TODO Add exercise from slides here here -->
+
+::::{card} Exercise: Archimedes' Principle
+
+Using the integral definition of buoyancy force, prove that the buoyant force equals the weight of the displaced fluid ($F_B = \rho g V$) for two cases:
+1.  A **fully submerged square** (in 2D).
+2.  A **fully submerged cylinder** (in 2D).
+
+The general formula for buoyancy force derived from hydrostatic pressure is:
+
+$$
+F_B = \left( \int_S p_h \,\vec{\mathbf{n}}_S \, dS \right) \cdot \vec{\mathbf{n}}_z = \rho g \int_S z \, (\vec{\mathbf{n}}_S \cdot \vec{\mathbf{n}}_z) \, dS
+$$
+
+*(Note: We assume a coordinate system where $z$ points upwards, $z=0$ is the water surface, and the surface normal $\vec{n}_S$ points outwards).*
+
+:::{dropdown} Proof for the Square
+The surface integral over the square can be split into integrals over its four sides ($S_1, S_2, S_3, S_4$). Let's assume:
+- $S_1$: Left vertical side
+- $S_2$: Bottom horizontal side (normal points down, $\vec{n}_S \cdot \vec{n}_z = -1$)
+- $S_3$: Right vertical side
+- $S_4$: Top horizontal side (normal points up, $\vec{n}_S \cdot \vec{n}_z = 1$)
+
+For the vertical sides ($S_1$ and $S_3$), the normal vector is horizontal, so the dot product with the vertical unit vector $\vec{n}_z$ is zero ($\vec{n}_S \cdot \vec{n}_z = 0$).
+
+The integral simplifies to:
+
+$$
+F_B = \rho g \left[ \underbrace{\int_{S_1} z (\vec{n}_{S_1} \cdot \vec{n}_z) dS}_{0} + \underbrace{\int_{S_2} z (\vec{n}_{S_2} \cdot \vec{n}_z) dS}_{-1} + \underbrace{\int_{S_3} z (\vec{n}_{S_3} \cdot \vec{n}_z) dS}_{0} + \underbrace{\int_{S_4} z (\vec{n}_{S_4} \cdot \vec{n}_z) dS}_{+1} \right]
+$$
+
+Let $z_{top}$ be the depth of the top surface ($S_4$) and $z_{bottom}$ be the depth of the bottom surface ($S_2$). Note that in a coordinate system where $z$ points upwards and $z=0$ is the water surface, both values are negative, and $z_{bottom} = z_{top} - L$.
+
+$$
+F_B = \rho g \left[ \int_{S_2} z \cdot (-1) \, dS + \int_{S_4} z \cdot (1) \, dS \right]
+$$
+
+Since the depth $z$ is constant along the horizontal surfaces $S_2$ and $S_4$:
+
+$$
+F_B = \rho g \left[ -z_{bottom} \cdot L + z_{top} \cdot L \right]
+$$
+
+$$
+F_B = \rho g L (z_{top} - z_{bottom})
+$$
+
+Substituting $z_{top} - z_{bottom} = L$:
+
+$$
+F_B = \rho g L \cdot L = \rho g L^2
+$$
+
+Since $L^2$ is the volume (area in 2D) of the square, we have proven that $F_B = \rho g V$.
+:::
+
+:::{dropdown} Proof for the Cylinder
+Assume a cylinder (circle in 2D) with radius $R$ and center depth $z_c$.
+
+The surface normal vector $\vec{n}_S$ at angle $\theta$ is $(\cos\theta, \sin\theta)$. The vertical unit vector $\vec{n}_z$ is $(0, 1)$.
+The dot product is $\vec{n}_S \cdot \vec{n}_z = \sin\theta$.
+
+The depth $z$ at any point is $z(\theta) = z_c + R\sin\theta$.
+The differential arc length is $dS = R d\theta$.
+
+The integral over the surface $S$ becomes an integral over the angle $\theta$ from $0$ to $2\pi$.
+
+$$
+F_B = \rho g \int_0^{2\pi} z(\theta) \cdot (\vec{n}_S \cdot \vec{n}_z) \, dS
+$$
+
+$$
+F_B = \rho g \int_0^{2\pi} (z_c + R\sin\theta) \cdot (\sin\theta) \cdot R \, d\theta
+$$
+
+$$
+F_B = \rho g R \left[ \int_0^{2\pi} z_c \sin\theta \, d\theta + \int_0^{2\pi} R \sin^2\theta \, d\theta \right]
+$$
+
+The first integral $\int_0^{2\pi} \sin\theta \, d\theta = 0$.
+The second integral $\int_0^{2\pi} \sin^2\theta \, d\theta = \pi$.
+
+$$
+F_B = \rho g R \cdot (0 + R \cdot \pi) = \rho g \pi R^2
+$$
+
+Since $\pi R^2$ is the area (volume in 2D) of the circle, we have proven that $F_B = \rho g V$.
+:::
+::::
 
 ## Static floating stability
 
 A floating structure is in static equilibrium when the resultant of all forces and the resultant moment about any axis are equal to zero. When the structure is slightly disturbed from this position, its behaviour defines its type of stability:
-- Stable equilibrium:
+- **Stable equilibrium:**
 A small disturbance produces a restoring effect that moves the structure back toward its original position.
-- Neutral equilibirum: 
+- **Neutral equilibirum:**
 After a disturbance, the structure remains in its new position, without returning or moving further away.
-- Unstable equilibrium:
+- **Unstable equilibrium:**
 A disturbance causes the structure to move farther away from its original position because no restoring tendency is present.
 
 Static stability can be considered separately for vertical translation, horizontal translation, and rotation.
@@ -98,7 +194,14 @@ $$
 
 This mechanism creates a restoring effect, meaning floating structures are always in stable equilibrium in the vertical direction.
 
-![Vertical_equilibrium](figures/Vertical_equilibrium.png)
+```{figure} figures/Vertical_equilibrium.png
+---
+name: fig-Vertical_equilibrium
+width: 80%
+align: center
+---
+Vertical equilibrium
+```
 
 ### Horizontal equilibirum 
 A small horizontal translation does not change the submerged geometry or the hydrostatic pressure distribution. Because the pressure field remains symmetric, the net hydrostatic force in the horizontal direction remains zero. The structure is therefore in neutral equilibrium for horizontal displacement, unless external systems (e.g., moorings, currents) introduce restoring or destabilizing forces.
@@ -121,11 +224,11 @@ The value and direction of this moment determine the type of rotational stabilit
 - If $M_H$ acts in the same direction as the rotation (overturning moment), the structure becomes increasingly tilted and the equilibrium is unstable.
 
 
-<!-- The figure illustrates how a small disturbance of a floating body creates a horizontal separation between the lines of action of weight (acting through $G$) and buoyancy (acting through $B$). This horizontal distance $y$ generates a hydrostatic moment $M_H$. In the sketched situation the body is heeled slightly clockwise, representing the small disturbance. Play with the interactive plot to see the type of stability that occurs.  # Description for the figure-->
+The figure below illustrates how a small disturbance of a floating body creates a horizontal separation between the lines of action of weight (acting through $G$) and buoyancy (acting through $B$). This horizontal distance $y$ generates a hydrostatic moment $M_H$. In the sketched situation the body is heeled slightly clockwise, representing the small disturbance. Play with the interactive plot to see the type of stability that occurs.
 
 ``` {raw} html
 <iframe
-  src="../../../_static/widgets/rotational_stability.html"
+  src="../../../_static/widgets/rotational_stability_widget.html"
   width="100%" height="520" style="border:0" loading="lazy">
 </iframe>
 ```

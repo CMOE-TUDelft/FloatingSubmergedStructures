@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hydrostatic Equilibrium Simulation</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      margin: 20px;
+    }
+    /* Width reduced from 950px */
+    .widget-container {
+      width: 800px; 
+      background: white;
+    }
+    /* Width reduced from 900px */
+    .plot-wrapper {
+      position: relative;
+      width: 750px; 
+      height: 400px; 
+      margin: 0 auto;
+    }
+    canvas {
+      display: block;
+      border: 1px solid #000;
+      background-color: white;
+    }
+    
+    #statusBox {
+      position: absolute;
+      top: 25px;
+      left: 70px; 
+      border: 1px solid #000;
+      padding: 8px 12px;
+      font-family: monospace;
+      font-size: 13px;
+      pointer-events: none;
+      z-index: 10;
+      white-space: pre-line;
+      background-color: white;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    }
+
+    /* Controls width adjusted */
+    .controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 10px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      width: 730px; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    label { font-weight: bold; font-size: 14px; color: #333; white-space: nowrap; }
+    input[type=range] { flex-grow: 1; cursor: pointer; }
+    .val-display { 
+      font-family: monospace; 
+      width: 70px; 
+      text-align: right; 
+      font-weight: bold; 
+    }
+    .title {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="widget-container">
+  <div class="title">Static pressure</div>
+  
+  <div class="plot-wrapper">
+    <canvas id="simCanvas" width="750" height="400"></canvas>
+    <!-- Overlay Status Box -->
+    <div id="statusBox"></div>
+  </div>
+
+  <div class="controls">
+    <label for="massInput">Mass (kg):</label>
+    <input type="range" id="massInput" min="100" max="14000" step="50" value="3450">
+    <span id="massVal" class="val-display">3450</span>
+  </div>
+</div>
+
+<script>
+  // --- 1. Physics Configuration ---
+  const g = 9.81;
+  const rhoW = 1000;
+  const R = 2.0;          // Radius
+  // Center X adjusted from 20 to 16 to fit new range
+  const cylX = 16.0;      
+  
+  const volume = Math.PI * R * R;
+  const maxBuoyancyForce = volume * rhoW * g; 
+  const maxMass = volume * rhoW; 
+
+  // --- 2. Visualization Config ---
+  const canvas = document.getElementById('simCanvas');
+  const ctx = canvas.getContext('2d');
+  const statusBox = document.getElementById('statusBox');
+  const slider = document.getElementById('massInput');
+  const valDisplay = document.getElementById('massVal');
+
+  // Reduced X-range from 30 to 25
+  const xMin = 0, xMax = 25;
+  const zMin = -10, zMax = 4.5;
+
+  const pressureColors = [
+    '#fde725', '#addc30', '#5ec962', '#28ae80',
+    '#21918c', '#2c728e', '#3b528b', '#472d7b'
+  ];
+
+  const padL = 50;  
+  const padR = 140; 
+  const padT = 20;  
+  const padB = 60;  
+
+  const widthPx = canvas.width;
+  const heightPx = canvas.height;
+  
+  const drawW = widthPx - padL - padR;
+  const drawH = heightPx - padT - padB;
+
+  const rangeX = xMax - xMin;
+  const rangeZ = zMax - zMin;
+
+  const scaleX = drawW / rangeX;
+  const scaleY = drawH / rangeZ;
+  
+  const scale = Math.min(scaleX, scaleY);
+
+  function toScreen(x, z) {
+    const px = padL + (x - xMin) * scale;
+    const py = padT + (zMax - z) * scale; 
+    return { x: px, y: py };
+  }
+
+  // --- 3. Physics Solver ---
+  function solveEquilibrium(mass) {
+    const weightForce = mass * g;
+
+    if (weightForce > maxBuoyancyForce) {
+      return { status: "SUNK", z: null };
+    }
+
+    let low = -R, high = R;
+    
+    for(let i=0; i<30; i++) {
+      let mid = (low + high) / 2;
+      let area = (R*R * Math.acos(mid/R)) - (mid * Math.sqrt(R*R - mid*mid));
+      let F_buoy = area * rhoW * g;
+      
+      if (F_buoy < weightForce) {
+        high = mid; 
+      } else {
+        low = mid;
+      }
+    }
+    
+    return { status: "FLOATING", z: (low+high)/2 };
+  }
+
+  // --- 4. Drawing Functions ---
+
+  function drawContourBackground() {
+    const step = 10.0 / 8.0;
+    
+    const airTop = toScreen(xMin, zMax);
+    const airBot = toScreen(xMax, 0);
+    ctx.fillStyle = "white";
+    ctx.fillRect(padL, padT, drawW, airBot.y - airTop.y);
+
+    for (let i = 0; i < 8; i++) {
+      const zBottom = zMin + i * step;     
+      const zTop = zMin + (i + 1) * step;  
+      
+      const pTop = toScreen(xMin, zTop);
+      const pBot = toScreen(xMax, zBottom);
+      
+      let h = pBot.y - pTop.y + 0.5;
+
+      ctx.fillStyle = pressureColors[i];
+      ctx.fillRect(padL, pTop.y, drawW, h);
+    }
+  }
+
+  function drawAxesAndLegend() {
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 1;
+    ctx.fillStyle = "black";
+    ctx.font = "12px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+
+    ctx.strokeRect(padL, padT, drawW, drawH);
+
+    // X Ticks every 5m
+    for (let x = 0; x <= xMax; x+=5) {
+      const p = toScreen(x, zMin);
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(p.x, p.y + 5); 
+      ctx.stroke();
+      ctx.fillText(x, p.x, p.y + 8);
+    }
+    ctx.fillText("X (m)", padL + drawW/2, padT + drawH + 25);
+
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    for (let z = -10; z <= 4; z+=2) {
+      const p = toScreen(xMin, z);
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(p.x - 5, p.y);
+      ctx.stroke();
+      ctx.fillText(z, p.x - 8, p.y);
+    }
+    
+    ctx.save();
+    ctx.translate(15, padT + drawH/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.textAlign = "center";
+    ctx.fillText("Z (m)", 0, 0);
+    ctx.restore();
+
+    // Colorbar
+    const barX = widthPx - 110; 
+    const barW = 15;
+    const barH = drawH;
+    const stepH = barH / 8;
+
+    for(let i=0; i<8; i++) {
+        ctx.fillStyle = pressureColors[i]; 
+        ctx.fillRect(barX, padT + i*stepH, barW, stepH + 0.5);
+    }
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(barX, padT, barW, barH);
+
+    ctx.fillStyle = "black";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
+    
+    const maxP = 105000;
+    const stepP = 15000;
+
+    for (let val = 0; val <= maxP; val += stepP) {
+        const ratio = (maxP - val) / maxP;
+        const yPos = padT + (ratio * barH);
+
+        ctx.beginPath();
+        ctx.moveTo(barX + barW, yPos);
+        ctx.lineTo(barX + barW + 5, yPos);
+        ctx.stroke();
+
+        ctx.fillText(val.toString(), barX + 22, yPos);
+    }
+
+    ctx.save();
+    ctx.translate(barX + 85, padT + barH/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.textAlign = "center";
+    ctx.font = "bold 13px sans-serif";
+    ctx.fillText("Pressure (Pa)", 0, 0);
+    ctx.restore();
+  }
+
+  function drawTunnel(z) {
+    const center = toScreen(cylX, z);
+    const radiusPx = R * scale;
+
+    ctx.beginPath();
+    ctx.arc(center.x, center.y, radiusPx, 0, 2 * Math.PI);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.stroke(); 
+  }
+
+  // --- 5. Main Update Loop ---
+  function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const mass = parseFloat(slider.value);
+    valDisplay.textContent = mass;
+    const res = solveEquilibrium(mass);
+
+    drawContourBackground();
+    drawAxesAndLegend();
+
+    if (res.status === "FLOATING") {
+      drawTunnel(res.z);
+      
+      const draft = (-res.z + R);
+      statusBox.innerHTML = `Status: FLOATING
+Center (z<sub>0</sub>): ${res.z.toFixed(2)} m
+Draft: ${draft.toFixed(2)} m`;
+      statusBox.style.backgroundColor = "white";
+      statusBox.style.borderColor = "black";
+      statusBox.style.display = "block";
+    } else {
+      statusBox.innerHTML = `Status: TOO HEAVY (SUNK)
+Mass ${mass} kg > Max ${Math.round(maxMass)} kg`;
+      statusBox.style.backgroundColor = "#ffe6e6"; 
+      statusBox.style.borderColor = "black";
+      statusBox.style.display = "block";
+    }
+  }
+
+  slider.addEventListener('input', update);
+  update();
+
+</script>
+</body>
+</html>

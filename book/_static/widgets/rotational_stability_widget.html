@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rotational Stability - Final Subscript</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      margin: 20px;
+    }
+    .widget-container {
+      width: 550px;
+      background: white;
+    }
+    .controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #f9f9f9; 
+      border-radius: 4px;
+    }
+    label { font-weight: bold; font-size: 14px; color: #333; }
+    input[type=range] { flex-grow: 1; cursor: pointer; }
+    .val-display { 
+      font-family: monospace; 
+      width: 50px; 
+      text-align: right; 
+      font-weight: bold; 
+    }
+    
+    canvas {
+      background-color: #fff;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid black; 
+    }
+
+    #statusBox {
+      margin-top: 15px;
+      padding: 5px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      text-align: center;
+      background-color: #eaf3f8;
+      border: 1px solid #d0d0d0;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="widget-container">
+  <div style="text-align: center; font-size: 16px; font-weight: bold; margin-bottom: 5px;">
+    Conceptual sketch of rotational stability
+  </div>
+
+  <canvas id="simCanvas" width="500" height="400"></canvas>
+  
+  <div id="statusBox">Loading...</div>
+
+  <div class="controls" style="margin-top: 15px;">
+    <label for="yOffset">y [m]:</label>
+    <input type="range" id="yOffset" min="-0.6" max="0.6" step="0.05" value="0.20">
+    <span id="yVal" class="val-display">0.20</span>
+  </div>
+</div>
+
+<script>
+  const canvas = document.getElementById('simCanvas');
+  const ctx = canvas.getContext('2d');
+  const slider = document.getElementById('yOffset');
+  const valDisplay = document.getElementById('yVal');
+  const statusBox = document.getElementById('statusBox');
+
+  const HEEL_DEG = -15; 
+  const HEEL_RAD = HEEL_DEG * (Math.PI / 180);
+  
+  const COLOR_BLUE = "#1f77b4";   
+  const COLOR_ORANGE = "#ff7f0e"; 
+  const COLOR_GRAY = "gray";      
+  
+  // Coordinate Limits (Matches previous 'Final V' version)
+  const xMin = -1.8, xMax = 1.8;
+  const yMin = -1.5, yMax = 1.1; 
+  
+  const scaleX = canvas.width / (xMax - xMin);
+  const scaleY = canvas.height / (yMax - yMin);
+
+  function toScreen(x, z) {
+    const px = (x - xMin) * scaleX;
+    const py = canvas.height - (z - yMin) * scaleY; 
+    return { x: px, y: py };
+  }
+
+  function rotate(x, z, angleRad) {
+    const cosA = Math.cos(angleRad);
+    const sinA = Math.sin(angleRad);
+    return {
+      x: x * cosA - z * sinA,
+      z: x * sinA + z * cosA
+    };
+  }
+
+  function drawArrow(ctx, fromX, fromY, toX, toY, text, textOffset = {x:0, y:0}) {
+    const headlen = 10; 
+    const dx = toX - fromX;
+    const dy = toY - fromY;
+    const angle = Math.atan2(dy, dx);
+    
+    ctx.beginPath();
+    ctx.moveTo(fromX, fromY);
+    ctx.lineTo(toX, toY);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2; 
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(toX, toY);
+    ctx.lineTo(toX - headlen * Math.cos(angle - Math.PI / 6), toY - headlen * Math.sin(angle - Math.PI / 6));
+    ctx.lineTo(toX - headlen * Math.cos(angle + Math.PI / 6), toY - headlen * Math.sin(angle + Math.PI / 6));
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    if (text) {
+        ctx.fillStyle = "black";
+        ctx.font = "italic 18px 'Times New Roman', serif"; 
+        ctx.fillText(text, toX + textOffset.x, toY + textOffset.y);
+    }
+  }
+
+  function drawDoubleArrow(ctx, x1, y1, x2, y2) {
+      const headlen = 6;
+      const angle = Math.atan2(y2-y1, x2-x1);
+      
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x1 + headlen * Math.cos(angle - Math.PI / 6), y1 + headlen * Math.sin(angle - Math.PI / 6));
+      ctx.lineTo(x1 + headlen * Math.cos(angle + Math.PI / 6), y1 + headlen * Math.sin(angle + Math.PI / 6));
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - headlen * Math.cos(angle - Math.PI / 6), y2 - headlen * Math.sin(angle - Math.PI / 6));
+      ctx.lineTo(x2 - headlen * Math.cos(angle + Math.PI / 6), y2 - headlen * Math.sin(angle + Math.PI / 6));
+      ctx.fill();
+  }
+
+  function drawCurvedArrow(ctx, startM, endM, label) {
+    const s = toScreen(startM.x, startM.z);
+    const e = toScreen(endM.x, endM.z);
+    
+    const cpM = { x: (startM.x + endM.x)/2, z: startM.z + 0.3 };
+    const cp = toScreen(cpM.x, cpM.z);
+
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
+    
+    ctx.beginPath();
+    ctx.moveTo(s.x, s.y);
+    ctx.quadraticCurveTo(cp.x, cp.y, e.x, e.y);
+    ctx.stroke();
+
+    const dx = 2 * (e.x - cp.x);
+    const dy = 2 * (e.y - cp.y);
+    const angle = Math.atan2(dy, dx);
+    const headlen = 10;
+
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.moveTo(e.x, e.y);
+    ctx.lineTo(e.x - headlen * Math.cos(angle - Math.PI / 6), e.y - headlen * Math.sin(angle - Math.PI / 6));
+    ctx.lineTo(e.x - headlen * Math.cos(angle + Math.PI / 6), e.y - headlen * Math.sin(angle + Math.PI / 6));
+    ctx.fill();
+
+    // Custom Label Drawing for Subscript (M_H)
+    const labelPos = toScreen(0, 0.60);
+    
+    if (label === "MH") {
+        // Draw "M"
+        ctx.font = "italic 18px 'Times New Roman', serif";
+        ctx.textAlign = "right"; // Anchor right side of M to center
+        ctx.fillText("M", labelPos.x, labelPos.y);
+
+        // Draw "H" (Subscript)
+        ctx.font = "italic 13px 'Times New Roman', serif"; // Smaller font
+        ctx.textAlign = "left"; // Anchor left side of H to center
+        ctx.fillText("H", labelPos.x, labelPos.y + 5); // Shifted down
+    } else {
+        // Fallback for standard labels
+        ctx.font = "italic 18px 'Times New Roman', serif";
+        ctx.textAlign = "center";
+        ctx.fillText(label, labelPos.x, labelPos.y);
+    }
+  }
+
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    const yOffset = parseFloat(slider.value);
+    valDisplay.textContent = yOffset.toFixed(2);
+
+    const pointsHull = [];
+    const pointsShadow = [];
+    const N = 300;
+    for (let i = 0; i <= N; i++) {
+        const theta = (i / N) * 2 * Math.PI;
+        const r = 1.0 + 0.15 * Math.sin(3 * theta);
+        const xRaw = r * Math.cos(theta);
+        const zRaw = r * Math.sin(theta) - 0.2;
+        
+        pointsShadow.push({x: xRaw, z: zRaw});
+        const rot = rotate(xRaw, zRaw, HEEL_RAD);
+        pointsHull.push(rot);
+    }
+
+    // Waterline
+    const wlLeft = toScreen(-3.0, 0);
+    const wlRight = toScreen(3.0, 0);
+    ctx.beginPath();
+    ctx.moveTo(wlLeft.x, wlLeft.y);
+    ctx.lineTo(wlRight.x, wlRight.y);
+    ctx.strokeStyle = COLOR_BLUE; 
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Shadow Body
+    ctx.beginPath();
+    const startS = toScreen(pointsShadow[0].x, pointsShadow[0].z);
+    ctx.moveTo(startS.x, startS.y);
+    for(let p of pointsShadow) {
+        const s = toScreen(p.x, p.z);
+        ctx.lineTo(s.x, s.y);
+    }
+    ctx.strokeStyle = COLOR_GRAY;
+    ctx.lineWidth = 1.2;
+    ctx.setLineDash([5, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]); 
+
+    // Rotated Body
+    ctx.beginPath();
+    const startH = toScreen(pointsHull[0].x, pointsHull[0].z);
+    ctx.moveTo(startH.x, startH.y);
+    for(let p of pointsHull) {
+        const s = toScreen(p.x, p.z);
+        ctx.lineTo(s.x, s.y);
+    }
+    ctx.strokeStyle = COLOR_BLUE;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    const xG0 = 0.0, zG0 = -0.4;
+    const xB0 = yOffset, zB0 = -0.1;
+
+    const G_rot = rotate(xG0, zG0, HEEL_RAD);
+    const B_rot = rotate(xB0, zB0, HEEL_RAD);
+
+    const sG = toScreen(G_rot.x, G_rot.z);
+    const sB = toScreen(B_rot.x, B_rot.z);
+
+    const z_y = -0.20; 
+    
+    const sY_start = toScreen(G_rot.x, z_y);
+    const sY_end = toScreen(B_rot.x, z_y);
+    
+    ctx.strokeStyle = COLOR_ORANGE;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(sY_start.x, sY_start.y);
+    ctx.lineTo(sY_end.x, sY_end.y);
+    ctx.stroke();
+
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 1.5;
+    ctx.fillStyle = "black";
+    drawDoubleArrow(ctx, sY_start.x, sY_start.y, sY_end.x, sY_end.y);
+    
+    ctx.font = "italic 18px 'Times New Roman', serif";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "black";
+    ctx.fillText("y", (sY_start.x + sY_end.x)/2, sY_start.y + 15);
+
+    ctx.fillStyle = COLOR_BLUE; 
+    ctx.beginPath(); ctx.arc(sG.x, sG.y, 6, 0, 2*Math.PI); ctx.fill();
+    ctx.font = "18px sans-serif"; ctx.fillStyle = "black"; ctx.textAlign = "left";
+    ctx.fillText("G", sG.x + 8, sG.y + 5); 
+
+    ctx.fillStyle = COLOR_ORANGE;
+    ctx.beginPath(); ctx.arc(sB.x, sB.y, 6, 0, 2*Math.PI); ctx.fill();
+    ctx.fillStyle = "black";
+    ctx.fillText("B", sB.x + 8, sB.y + 5); 
+
+    const vecLen = 0.45;
+    
+    const sG_end = toScreen(G_rot.x, G_rot.z - vecLen);
+    drawArrow(ctx, sG.x, sG.y, sG_end.x, sG_end.y, "gm", {x: 5, y: -5});
+
+    const sB_end = toScreen(B_rot.x, B_rot.z + vecLen);
+    drawArrow(ctx, sB.x, sB.y, sB_end.x, sB_end.y, "ρgV", {x: 5, y: 5});
+
+    let txt = "";
+    
+    if (yOffset > 0) {
+        drawCurvedArrow(ctx, {x: 0.3, z: 0.35}, {x: -0.3, z: 0.35}, "MH");
+        txt = "y > 0 → restoring moment (stable)";
+    } else if (yOffset < 0) {
+        drawCurvedArrow(ctx, {x: -0.3, z: 0.35}, {x: 0.3, z: 0.35}, "MH");
+        txt = "y < 0 → overturning moment (unstable)";
+    } else {
+        drawCurvedArrow(ctx, {x: 0.05, z: 0.35}, {x: -0.05, z: 0.35}, "MH");
+        txt = "y = 0 → no moment (neutral)";
+    }
+
+    statusBox.textContent = txt;
+    
+    ctx.font = "16px sans-serif";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "right";
+    ctx.fillText("x", canvas.width - 10, canvas.height - 10);
+    ctx.textAlign = "left";
+    ctx.fillText("z", 10, 20);
+  }
+
+  slider.addEventListener('input', draw);
+  draw();
+
+</script>
+</body>
+</html>
