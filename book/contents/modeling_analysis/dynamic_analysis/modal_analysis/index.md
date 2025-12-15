@@ -94,12 +94,8 @@ This process typically favors lower-frequency modes, which is consistent with th
 
 Once the dominant modes are selected and the modal equations are solved, the results are translated back into global structural behavior. This phase evaluates the safety and performance of the SFT through two main steps:
 
-1.  **Global Displacement Reconstruction:** The global displacement vector $\mathbf{x}(t)$ is reconstructed by summing the contributions of the active modes using the equation:
-    $$
-    \mathbf{x}(t) = \sum_{i=1}^{n} \phi_i q_i(t)
-    $$
+1.  **Global Displacement Reconstruction:** The global displacement vector $\mathbf{x}(t)$ is reconstructed by summing the contributions of the active modes using the equation: $\mathbf{x}(t) = \sum_{i=1}^{n} \phi_i q_i(t)$
     
-
 2.  **Stress Computation:** The displacement field is used to compute internal stresses within the beam elements. This includes axial ($\sigma_x$), bending ($\sigma_{xy}, \sigma_{xz}$), shear ($\tau_y, \tau_z$), and torsional ($\tau_x$) stresses. These components are often combined into a **Von-Mises stress** to provide a single scalar value for checking structural capacity.
 
 The analysis of these stresses typically reveals that bending and shear components dominate the response due to the vertical hydrodynamic loading, while axial and torsional stresses play a secondary role. Additionally, the time-history of these stresses helps verify the system's damping behavior, showing how initial oscillations decay over time.
