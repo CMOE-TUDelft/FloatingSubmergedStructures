@@ -84,9 +84,15 @@ Solving this equation, using a numerical solver like those incorporated in the *
 
 Solving the full dynamic system for every possible vibration mode is computationally intensive and often unnecessary, as not all modes contribute meaningfully to the structure's response. To optimise the simulation while maintaining accuracy, a selection process is performed to identify the "dominant" modes:
 
-1.  **Define Frequency Range:** An initial range of modes is identified based on the governing wave spectrum, specifically targeting frequencies between the lower cut-off and the spectral peak where wave energy is concentrated.
+1.  **Define Frequency Range:** An initial range of modes is identified based on the governing wave spectrum, specifically targeting frequencies between the lower cut-off and the spectral peak where wave energy is concentrated. An example of this is shown below.
+
+![Frequency range](fig/SpectralDensity.png)
+
+
 2.  **Amplitude Thresholding:** A preliminary solution is computed using all modes within this range. The average displacement amplitude for each mode is calculated, and only those exceeding a specific threshold (indicating significant energetic excitation) are retained for the final analysis.
-3.  **Validation:** The accuracy of this reduced set is validated by comparing its resulting displacements against those obtained from the full set of modes. If the difference is negligible, the selection is confirmed.
+
+![Mean Displacement](fig/Mean_displacement.png)
+1.  **Validation:** The accuracy of this reduced set is validated by comparing its resulting displacements against those obtained from the full set of modes. If the difference is negligible, the selection is confirmed.
 
 This process typically favors lower-frequency modes, which is consistent with the physics of long-period swell waves that penetrate deep enough into the water column to influence the submerged structure.
 
