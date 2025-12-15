@@ -8,21 +8,21 @@ With the matrices that are associated with the free degrees of freedom, a modal 
 
 ## Modal Superposistion
 
-The modal analysis can be performed by computing the reduced global matrices $\bold{K}_{FF}$ and $\bold{M}_{FF}$, and solving the following eigenvalue problem:
+The modal analysis can be performed by computing the reduced global matrices $\mathbf{K}_{FF}$ and $\mathbf{M}_{FF}$, and solving the following eigenvalue problem:
 
 $$
-(\bold{K}_{FF}-\omega^2 \bold{M}_{FF})\phi = 0
+(\mathbf{K}_{FF}-\omega^2 \mathbf{M}_{FF})\phi = 0
 $$
 
 Where:
 - $\omega$: the natural circular frequency (rad/s)
 - $\phi$: the mode shape vector
-- $\bold{K}_{FF}$ and $\bold{M}_{FF}$: the reduced global stiffness and mass matrices
+- $\mathbf{K}_{FF}$ and $\mathbf{M}_{FF}$: the reduced global stiffness and mass matrices
 
 The structural displacement is then approximated using the first $n$ moded:
 
 $$
-\bold{x}(t) \approx \sum_{i=1}^n \phi_i q_i(t)
+\mathbf{x}(t) \approx \sum_{i=1}^n \phi_i q_i(t)
 $$
 
 Where:
@@ -67,7 +67,7 @@ Where:
 
 ## Solving the Equation of Motion
 
-To solve the governing equation $\mathbf{M} \bold{\ddot{x}} + \mathbf{C} \bold{\dot{x}} + \mathbf{K} \bold{x} = \mathbf{F}(t)$, one has to re-write the equation, placing the all terms involing structural acceleration on the left side, and all terms involving velocity and structural motion on the right side. This yields the following equation:
+To solve the governing equation $\mathbf{M} \mathbf{\ddot{x}} + \mathbf{C} \mathbf{\dot{x}} + \mathbf{K} \mathbf{x} = \mathbf{F}(t)$, one has to re-write the equation, placing the all terms involing structural acceleration on the left side, and all terms involving velocity and structural motion on the right side. This yields the following equation:
 
 $$
 \dot{q}_i(t) = v_i(t)
