@@ -18,3 +18,6 @@ In this course, the Finite Element Method is used to assess the dynamic behaviou
 9. Transform these modal displacements back to global space to compute the structural response, from where stress components like axial stress, bending stress, shear stres and torsional stress can be calculated. 
 
 
+:::{card} Finite Element Method
+This book provides information about the application of the Finite Element Method for Floating and Submerged structures. Information in this book is derived from the book *Finite Elements in Civil Engineering and Geosciences* which can be accessed through the following link: https://teachbooks.tudelft.nl/computational-modelling/intro.html. 
+:::
