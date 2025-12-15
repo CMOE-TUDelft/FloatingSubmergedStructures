@@ -2,7 +2,13 @@
 
 While floating and submerged tunnels are primarily influenced by hydrodynamic forcing, the aerodynamic environment can play a critical, dual role in their design. First, wind acts on the surface components (pontoons, towers, and bridge girders), creating static and dynamic loads. Second, wind is the driving force behind wave generation; understanding the wind field is essential for predicting the "fetch-limited" sea states described in the JONSWAP spectrum (see Section Waves).
 
-![Wind Profile](fig/wind_profile.png)
+```{figure} fig/wind_profile.png
+---
+name: Wind_Profile_over_Open_Sea
+width: 80%
+align: center
+---
+```
 
 ## Mean Wind Speed and Profile ($U_z$)
 

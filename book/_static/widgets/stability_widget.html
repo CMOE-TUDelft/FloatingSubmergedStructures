@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rotational Stability Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { margin:0; padding:12px; font-family: system-ui, -apple-system, sans-serif; }
+    #wrap { max-width: 600px; margin: 0 auto; }
+    .controls { display: flex; gap: 15px; align-items: center; margin-bottom: 10px; background: #f9f9f9; padding: 10px; border-radius: 8px;}
+    .controls label { font-weight: 600; min-width: 60px; }
+    #slider { flex-grow: 1; }
+    .value { font-family: monospace; min-width: 50px; text-align: right; }
+    #plot { width: 100%; height: 500px; }
+  </style>
+</head>
+<body>
+
+<div id="wrap">
+  <div class="controls">
+    <label for="slider">y offset</label>
+    <input id="slider" type="range" min="-0.6" max="0.6" step="0.05" value="0.3">
+    <span class="value" id="val">0.30</span> m
+  </div>
+  <div id="plot"></div>
+</div>
+
+<script>
+  // --- 1. Math & Geometry Setup ---
+
+  // Constants
+  const HEEL_DEG = -15;
+  const HEEL_RAD = HEEL_DEG * (Math.PI / 180);
+
+  // Helper: Rotate a point (x, z) around (0,0) by angle theta
+  function rotate(x, z, theta) {
+    const cosT = Math.cos(theta);
+    const sinT = Math.sin(theta);
+    return {
+      x: x * cosT - z * sinT,
+      z: x * sinT + z * cosT
+    };
+  }
+
+  // Generate Hull Shape (The static body)
+  const N_POINTS = 300;
+  const hullX = [], hullZ = [];
+
+  for (let i = 0; i <= N_POINTS; i++) {
+    const t = (i / N_POINTS) * 2 * Math.PI;
+    const r = 1.0 + 0.15 * Math.sin(3 * t);
+    // Original coords
+    const x0 = r * Math.cos(t);
+    const z0 = r * Math.sin(t) - 0.2; 
+
+    // Apply fixed rotation immediately
+    const p = rotate(x0, z0, HEEL_RAD);
+    hullX.push(p.x);
+    hullZ.push(p.z);
+  }
+
+  // --- 2. Plotly Setup ---
+
+  function getGraphData(y_offset) {
+
+    // -- Calculate Centers G and B --
+    // G is fixed at (0, -0.4) in body frame
+    const G = rotate(0.0, -0.4, HEEL_RAD);
+
+    // B moves horizontally in body frame based on slider (y_offset, -0.1)
+    const B = rotate(y_offset, -0.1, HEEL_RAD);
+
+    // -- Determine Stability Status & Arrow Logic --
+    let statusText = "Neutral";
+    let statusColor = "gray";
+    let arcX = [], arcZ = []; // Coordinates for the moment arrow
+
+    if (y_offset > 0.05) {
+      statusText = "Stable (Restoring)";
+      statusColor = "green";
+      // Generate an arc for the arrow
+      for(let i=0; i<=20; i++){
+          let a = Math.PI/2 + (i/20)*0.5; 
+          arcX.push(0.5 * Math.cos(a));
+          arcZ.push(0.5 * Math.sin(a) + 0.1); 
+      }
+    } else if (y_offset < -0.05) {
+      statusText = "Unstable (Overturning)";
+      statusColor = "red";
+      for(let i=0; i<=20; i++){
+          let a = Math.PI/2 - (i/20)*0.5; 
+          arcX.push(0.5 * Math.cos(a));
+          arcZ.push(0.5 * Math.sin(a) + 0.1);
+      }
+    }
+
+    // -- Traces --
+    const traces = [
+      // 1. Hull
+      { x: hullX, y: hullZ, mode: 'lines', line: {color: '#1f77b4', width: 3}, name: 'Hull' },
+
+      // 2. Waterline
+      { x: [-2, 2], y: [0, 0], mode: 'lines', line: {color: 'black', width: 1}, hoverinfo: 'skip' },
+
+      // 3. Points G and B
+      { 
+        x: [G.x, B.x], 
+        y: [G.z, B.z], 
+        mode: 'markers+text', 
+        text: ['G', 'B'],
+        textposition: 'top right',
+        textfont: {size: 14, color: ['red', 'green']},
+        marker: {size: 10, color: ['red', 'green']},
+        name: 'Centers'
+      },
+
+      // 4. Moment Arrow
+      {
+         x: arcX, y: arcZ, mode: 'lines', 
+         line: {color: 'orange', width: 3}, 
+         showlegend: false,
+         hoverinfo: 'skip'
+      }
+    ];
+
+    // -- Annotations --
+    const annotations = [
+        // Weight Vector (Down from G)
+        { x: G.x, y: G.z - 0.6, ax: G.x, ay: G.z, xref: 'x', yref: 'y', axref: 'x', ayref: 'y', showarrow: true, arrowcolor: 'red', arrowwidth: 2, arrowhead: 2 },
+        // Buoyancy Vector (Up from B)
+        { x: B.x, y: B.z + 0.6, ax: B.x, ay: B.z, xref: 'x', yref: 'y', axref: 'x', ayref: 'y', showarrow: true, arrowcolor: 'green', arrowwidth: 2, arrowhead: 2 },
+        // Status Box
+        { x: 0.5, y: 0.05, xref: 'paper', yref: 'paper', text: statusText, showarrow: false, bgcolor: statusColor, font: {color:'white'}, opacity: 0.8, borderpad: 6, bordercolor: statusColor, borderwidth: 1, rx: 5 }
+    ];
+
+    // Add arrow head to moment curve if exists
+    if(arcX.length > 0) {
+        let last = arcX.length -1;
+        annotations.push({
+            x: arcX[last], y: arcZ[last],
+            ax: arcX[last-1], ay: arcZ[last-1], 
+            xref: 'x', yref: 'y', axref: 'x', ayref: 'y',
+            showarrow: true, arrowcolor: 'orange', arrowhead: 3, arrowsize: 1.5
+        });
+        annotations.push({
+            x: 0, y: 0.7, text: 'Moment', showarrow: false, font:{color:'orange'}
+        });
+    }
+
+    return { traces, annotations };
+  }
+
+  // --- 3. Interaction Logic ---
+
+  const slider = document.getElementById('slider');
+  const valDisplay = document.getElementById('val');
+
+  // Initial Plot
+  const initData = getGraphData(0.3);
+
+  const layout = {
+    xaxis: {range: [-1.5, 1.5], showgrid: false, zeroline: false, showticklabels: false, scaleanchor: "y", scaleratio: 1},
+    yaxis: {range: [-1.5, 1.2], showgrid: false, zeroline: false, showticklabels: false},
+    margin: {l: 10, r: 10, t: 30, b: 10},
+    title: 'Conceptual Rotational Stability',
+    hovermode: 'closest',
+    dragmode: false
+  };
+
+  Plotly.newPlot('plot', initData.traces, layout, {displayModeBar: false});
+  Plotly.relayout('plot', {annotations: initData.annotations});
+
+  // Update on slide
+  slider.addEventListener('input', function() {
+    const yVal = parseFloat(this.value);
+    valDisplay.textContent = yVal.toFixed(2);
+
+    const newData = getGraphData(yVal);
+
+    Plotly.react('plot', newData.traces, layout);
+    Plotly.relayout('plot', {annotations: newData.annotations});
+  });
+
+</script>
+</body>
+</html>

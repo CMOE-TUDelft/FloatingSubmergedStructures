@@ -1,10 +1,5 @@
 # Extreme Value Analysis
 
-
-```
-This section was written with the help of backround material written by Patricia Mares Nasarre 
-```
-
 While data can be used to obtain information about regular behaviour, it can also be used to quantify stochastic behaviour. In many engineering problems, there is typically an interest in the tail of distributions. For instance, flood protection systems will be designed to withstand extreme rainfall events or extreme river discharges (low exceedance probabilities), not only daily conditions (high exceedance probabilities); these extreme events are located in the tails of the distribution. Moreover, by definition, extreme events are typically scarce in our datasets, as they occur infrequently. The available time series are usually short (e.g., 20 years) in comparison with the design events that the system needs to withstand (e.g., 1,000 years event).
 
 :::{card} Definition

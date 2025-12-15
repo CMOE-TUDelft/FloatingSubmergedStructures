@@ -1,3 +1,3 @@
 # Intro
 
-This section provides an overview of the topic.
+Designing any structure requires accurate load quantification. This begins with analyzing environmental conditions, considering both typical daily scenarios and extreme events with long return periods, such as 100 years. This chapter briefly outlines the environmental impacts relevant to Submerged Floating Tunnel design and explains how to derive design values for extreme events from standard time series data.
