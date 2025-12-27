@@ -59,27 +59,26 @@ Reference: [Vegvesen](https://www.vegvesen.no/globalassets/vegprosjekter/utbyggi
 ### 3. Perform ideation
 It is paramount to identify many alterantive concepts and evaluate these. 
 Key steps in ideation:
-1. Define framework
-2. 'How can we ...' question
-3. Idea generation
-4. Select methods (COCD box)
-
-   <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/76781655-56eb-4d4e-8634-c9b6b1d891a0" />
-
-   Reference: [COCD box](https://schoolofcreativethinking.nl/en/cocd-box/) and [Creative Thinking](https://elbd.sites.uu.nl/wp-content/uploads/sites/108/2017/05/2297_17_workshopcreadenkenecent12mei011.ppt.pdf)
-   
-5. Combine and work out
-6. Enrich the selected ideas
+* Define framework
+* 'How can we ...' question
+* Idea generation
+* Select methods (COCD box)
   
-   <img width="300" height="180" alt="image" src="https://github.com/user-attachments/assets/c06620e8-5133-4666-880d-b826e385c06d" />
+  <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/76781655-56eb-4d4e-8634-c9b6b1d891a0" />
+  
+   Reference: [COCD box](https://schoolofcreativethinking.nl/en/cocd-box/) and [Creative Thinking](https://elbd.sites.uu.nl/wp-content/uploads/sites/108/2017/05/2297_17_workshopcreadenkenecent12mei011.ppt.pdf)
+* Combine and work out
+* Enrich the selected ideas
+  
+  <img width="300" height="180" alt="image" src="https://github.com/user-attachments/assets/c06620e8-5133-4666-880d-b826e385c06d" />
 
 ### 4. Check Feasibility
 Once several preferred concepts have been identified, these need to be verified technically. This is best done by checking vertical & horizontal stability. To do this the following steps are important:
-1. Define structure (diameter, support structure/stiffness)
-2. Calculate weight / buoyancy
-3. Calculate static support loads
-4. Calculate environmental loads (first estimate)
-5. Calculate variable support loads / deflections
+* Define structure (diameter, support structure/stiffness)
+* Calculate weight / buoyancy
+* Calculate static support loads
+* Calculate environmental loads (first estimate)
+* Calculate variable support loads / deflections
 
 Note: The vertical stability is mainly dependent on the static loads while horizontal stability is driven mainly by the environmental loads.
 
