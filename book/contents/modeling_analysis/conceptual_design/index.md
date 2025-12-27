@@ -17,8 +17,8 @@ For a concept design it is important to go through several steps. (Some) steps m
 5. Review life-cycle feasibility of the concepts.
 6. Select preferred concept based on in-place and life-cycle engineering assessments and project requirements. 
 
-An example of a concept design:
-[![Go-ahead given for floating bridge with tidal power plant]([https://img.youtube.com/vi/SUwH6Izh6qo/hqdefault.jpg)](https://www.youtube.com/watch?v=SUwH6Izh6qo](https://www.bridgeweb.com/Go-ahead-given-for-floating-bridge-with-tidal-power-plant/4364))
+An example of a concept design for a floating bridge with tidal power plant:
+[Example Concept Design](https://www.bridgeweb.com/Go-ahead-given-for-floating-bridge-with-tidal-power-plant/4364)
 
 ### 1. Explore and establish requirments
 By defining the use of the concept, the appropriate design basis can be defined:
@@ -83,9 +83,16 @@ Once several preferred concepts have been identified, these need to be verified 
 
 Note: The vertical stability is mainly dependent on the static loads while horizontal stability is driven mainly by the environmental loads.
 
-<img width="300" height="110" alt="image" src="https://github.com/user-attachments/assets/ffb22081-dc28-4b97-a8d1-80a27b461bbc" /> <img width="300" height="110" alt="image" src="https://github.com/user-attachments/assets/272e8d10-23ad-4de9-8f88-82bcb2cf9eb3" />
+<img width="300" height="110" alt="image" src="https://github.com/user-attachments/assets/ffb22081-dc28-4b97-a8d1-80a27b461bbc" /> <img width="310" height="130" alt="image" src="https://github.com/user-attachments/assets/272e8d10-23ad-4de9-8f88-82bcb2cf9eb3" />
 
 Reference: [icoz](https://icozct.tudelft.nl/TUD_CT/CT3109/collegestof/invloedslijnen/files/VGN.pdf) 
+
+### 5. Life-cycle Feasibility
+See Chapter: [LCA]()
+
+### 6. Concept Selection
+Select preferred concept based on in-place and life-cycle engineering assessments and project
+requirements. 
 
 ## Example Case - Submerged Floating Tunnel (SFT) Sognefjorden
 
