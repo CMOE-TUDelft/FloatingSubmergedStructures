@@ -30,7 +30,7 @@ By defining the use of the concept, the appropriate design basis can be defined:
 By defining the use of the concept, the appropriate design basis can be defined:
 * Design life: Generally 100 years for main strcuture and 50 years for replaceable components.
 * Permanent loads: Self-weight & Equipment, Buoyancy, Ballast, (if used) Tether forces, (if used) Mooring pretension, etc.
-* Variable loads: Traffic, Temperature, Tides, Waves, Current, Wind, Marine fouling, etc. See chapter: [Environmental Conditions](env_source_characterization). 
+* Variable loads: Traffic, Temperature, Tides, Waves, Current, Wind, Marine fouling, etc. See chapter: [Environmental Conditions](https://github.com/CMOE-TUDelft/FloatingSubmergedStructures/tree/mooring_experiment/book/contents/env_source_characterization). 
 * Accidental loads: Ship impact, Falling objects, Filling of floating body, Failure in mooring system, etc.
 * Design criteria: Vertical stability, Horizontal stability, Strength / Strain limitations, maximum deflections, accelerations, Fatigue.
 
@@ -88,13 +88,15 @@ Note: The vertical stability is mainly dependent on the static loads while horiz
 Reference: [icoz](https://icozct.tudelft.nl/TUD_CT/CT3109/collegestof/invloedslijnen/files/VGN.pdf) 
 
 ### 5. Life-cycle Feasibility
-See Chapter: [LCA]()
+See Chapter: [LCA](https://github.com/CMOE-TUDelft/FloatingSubmergedStructures/tree/mooring_experiment/book/contents/design_principles/lca)
 
 ### 6. Concept Selection
 Select preferred concept based on in-place and life-cycle engineering assessments and project
-requirements. 
+requirements.
 
 ## Example Case - Submerged Floating Tunnel (SFT) Sognefjorden
+
+
 
 
 
